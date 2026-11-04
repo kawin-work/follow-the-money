@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#050607">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Follow the Money · เส้นทางเงิน มูลนิธิองค์กรทำดี">
-<meta property="og:description" content="ผังเส้นทางเงินจากข่าว 32 ชิ้น แยกสิ่งที่ตำรวจแถลง คำอ้างของคู่กรณี และข่าวที่ยังไม่ยืนยัน">
+<meta property="og:description" content="ผังเส้นทางเงินจากข่าว 42 ชิ้น แยกสิ่งที่ตำรวจแถลง คำอ้างของคู่กรณี และข่าวที่ยังไม่ยืนยัน">
 <meta property="og:image" content="https://kawin-work.github.io/follow-the-money/og.jpg">
 <meta property="og:url" content="https://kawin-work.github.io/follow-the-money/">
 <meta name="twitter:card" content="summary_large_image">
@@ -161,6 +161,25 @@ section.chap{padding-block:clamp(72px,10vw,140px) 0}
 .t-unv{color:var(--unv);background:var(--unv-bg)}.t-unv::before{border-top-style:dotted;border-top-width:3px}
 .t-neu{color:var(--dim);background:rgba(255,255,255,.05)}
 .t-flag{color:var(--flag);background:var(--flag-bg)}.t-flag::before{content:"!";width:auto;border:0;font-weight:700}
+
+/* latest update */
+.latest{padding-block:clamp(56px,7vw,96px) 0}
+.latest-in{border:1px solid var(--line2);background:var(--bg2);padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:12px}
+.lt-head{display:flex;gap:10px;align-items:center;font-size:11.5px;letter-spacing:.14em;color:var(--flag)}
+.lt-head i{width:7px;height:7px;border-radius:50%;background:var(--flag);display:inline-block}
+.latest h2{font-size:clamp(24px,3vw,38px)}
+.latest .lede{color:var(--ink2);font-weight:300;max-width:70ch}
+.lt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin-top:8px}
+.lt{padding:18px 20px 6px 0;display:flex;flex-direction:column;gap:9px;min-width:0}
+.lt+.lt{padding-left:20px;border-left:1px solid var(--line)}
+.lt .tag{align-self:flex-start}
+.lt h3{font-size:18px;line-height:1.45}
+.lt p{font-size:14.5px;color:var(--ink2);font-weight:300}
+@media (max-width:900px){.lt-grid{grid-template-columns:1fr}.lt+.lt{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+.log{margin-top:28px;font-size:13px;color:var(--dim);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:18px}
+.log b{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);font-weight:400}
+.log ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.log .mono{color:var(--ink2)}
 
 /* 01 brief */
 .brief{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(28px,5vw,72px);align-items:start}
@@ -410,6 +429,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <nav id="menu" aria-label="สารบัญ" aria-hidden="true">
   <button class="pillbtn close" id="menuClose">ปิด ✕</button>
   <ol>
+    <li><a href="#latest"><span>00</span>อัปเดตล่าสุด</a></li>
     <li><a href="#brief"><span>01</span>สรุปคดี</a></li>
     <li><a href="#flow-sec"><span>02</span>ผังเส้นเงิน</a></li>
     <li><a href="#exhibits"><span>03</span>หลักฐานทีละเส้น</a></li>
@@ -452,8 +472,8 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       </div>
     </div>
     <aside class="badge" aria-label="ข้อมูลแฟ้ม">
-      <div class="row"><span class="k">อัปเดต</span><span class="v mono">04.11.2569 · 18:00</span></div>
-      <div class="row"><span class="k">แหล่งข่าว</span><span class="v">32 ชิ้น · 16 สำนัก</span></div>
+      <div class="row"><span class="k">อัปเดต</span><span class="v mono">04.11.2569 · 17:30</span></div>
+      <div class="row"><span class="k">แหล่งข่าว</span><span class="v">42 ชิ้น · 18 สำนัก</span></div>
       <div class="row"><span class="k">สถานะ</span><span class="v">ยังไม่ออกหมาย ไม่มีคำพิพากษา</span></div>
     </aside>
   </div>
@@ -471,7 +491,8 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       <li>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</li>
       <li>ร่วมกันฟอกเงิน</li>
       <li><b>4 พ.ย.</b>ยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ</li>
-      <li><b>9 พ.ย.</b>ตำรวจคาดสรุปผล</li>
+      <li><b>4 พ.ย.</b>มีรายงานว่า ปอศ. อายัดทรัพย์บุ๋มและครอบครัว ตำรวจยังไม่แถลงยืนยัน</li>
+      <li><b>6 พ.ย.</b>ตำรวจคาดชัดเจนเรื่องหมายเรียกหรือหมายจับ</li>
       <li><b>10 พ.ย.</b>เส้นตายส่งเอกสารการเงินต่อกระทรวงมหาดไทย</li>
       <li><b>29 ต.ค.</b>มูลนิธิหยุดรับบริจาคทุกช่องทาง</li>
     </ul>
@@ -480,12 +501,44 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       <li>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</li>
       <li>ร่วมกันฟอกเงิน</li>
       <li><b>4 พ.ย.</b>ยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ</li>
-      <li><b>9 พ.ย.</b>ตำรวจคาดสรุปผล</li>
+      <li><b>4 พ.ย.</b>มีรายงานว่า ปอศ. อายัดทรัพย์บุ๋มและครอบครัว ตำรวจยังไม่แถลงยืนยัน</li>
+      <li><b>6 พ.ย.</b>ตำรวจคาดชัดเจนเรื่องหมายเรียกหรือหมายจับ</li>
       <li><b>10 พ.ย.</b>เส้นตายส่งเอกสารการเงินต่อกระทรวงมหาดไทย</li>
       <li><b>29 ต.ค.</b>มูลนิธิหยุดรับบริจาคทุกช่องทาง</li>
     </ul>
   </div>
 </div>
+
+<!-- latest -->
+<section class="wrap latest" id="latest" aria-labelledby="h-latest">
+  <div class="latest-in">
+    <div class="lt-head mono"><i aria-hidden="true"></i>อัปเดตล่าสุด · 04.11.2569 · 17:30</div>
+    <h2 id="h-latest">ยังไม่ออกหมาย และข่าวอายัดทรัพย์ยังไม่มีคำยืนยันจากตำรวจ</h2>
+    <p class="lede">สรุปจากข่าวช่วงบ่ายถึงเย็นวันที่ 4 พ.ย. 2569 ทุกข้อระบุแหล่งข่าวไว้ใต้ย่อหน้า</p>
+    <div class="lt-grid">
+      <article class="lt">
+        <span class="tag t-off">ตำรวจแถลง</span>
+        <h3>ยังไม่ออกหมายจับหรือหมายเรียกผู้ต้องหาในคดีมูลนิธิ</h3>
+        <p>ผบช.ก. พล.ต.ท.ณัฐศักดิ์ เชาวนาศัย ขอเวลาอีก 1–2 วันเพื่อตรวจพยานหลักฐานและประชุมสรุปสำนวน หลายสำนักรายงานว่าจะชัดเจนไม่เกินวันศุกร์ 6 พ.ย. ข้อหาที่พิจารณายังเป็น 3 ข้อหาเดิม คือ ฉ้อโกงประชาชน พ.ร.บ.คอมพิวเตอร์ และฟอกเงิน</p>
+        <p>สยามรัฐรายงานว่าแม้ศาลอาจอนุมัติหมายจับได้ทันที พนักงานสอบสวนจะพิจารณาเลือกมาตรการตามกฎหมายที่เหมาะสม</p>
+        <div class="src"><a href="https://www.thaipost.net/criminality-news/1101655/" target="_blank" rel="noopener">ไทยโพสต์ 04.11</a><a href="https://thethaiger.com/th/news/1627230/" target="_blank" rel="noopener">Thaiger 04.11</a><a href="https://siamrath.co.th/crime/333329" target="_blank" rel="noopener">สยามรัฐ 04.11</a><a href="https://www.siamnews.com/news/crime/56579" target="_blank" rel="noopener">สยามนิวส์ 03.11</a></div>
+      </article>
+      <article class="lt">
+        <span class="tag t-unv">มีรายงาน · รอยืนยัน</span>
+        <h3>อายัดทรัพย์บุ๋มและครอบครัว</h3>
+        <p>ข่าว 5 สำนักรายงานรายการเดียวกันว่า บก.ปอศ. อายัดทรัพย์ของบุ๋ม สามี ลูก และพ่อแม่ ได้แก่ บ้าน 3–4 หลัง ที่ดินหลายแปลง รถราว 20 คัน ปืน 6 กระบอก กระเป๋าแบรนด์เนมจำนวนมาก และเงินในทุกบัญชีกว่า 100 ล้านบาท (ผู้จัดการ แนวหน้า และ Bangkok Insight ระบุว่ารวมบัญชีมูลนิธิด้วย) โดยอ้างว่าเป็นทรัพย์ที่ได้มาหลังปี 2560</p>
+        <p>ทุกสำนักใช้คำว่า “มีรายงาน” หรือ “สะพัด” ไม่มีสำนักใดระบุฐานกฎหมาย และยังไม่มีคำแถลงจากตำรวจ Thaiger ระบุว่ายังต้องรอตำรวจยืนยันขอบเขต รายการทรัพย์ และยอดเงิน</p>
+        <div class="src"><a href="https://mgronline.com/crime/detail/9690000105876" target="_blank" rel="noopener">ผู้จัดการ 04.11</a><a href="https://www.naewna.com/n/top-stories/148587/" target="_blank" rel="noopener">แนวหน้า 04.11</a><a href="https://thethaiger.com/th/news/1627230/" target="_blank" rel="noopener">Thaiger 04.11</a><a href="https://www.thebangkokinsight.com/news/lifestyle/entertainment/1716747/" target="_blank" rel="noopener">Bangkok Insight 04.11</a><a href="https://www.amarintv.com/news/crime/561985" target="_blank" rel="noopener">อมรินทร์ 04.11</a></div>
+      </article>
+      <article class="lt">
+        <span class="tag t-neu">คนละคดี</span>
+        <h3>หมายเรียกของ สภ.บ้านนา ไม่ใช่คดีมูลนิธิ</h3>
+        <p>สภ.บ้านนา จ.นครนายก ออกหมายเรียก 4 คน (ไม่เปิดชื่อ) ในคดีรุกที่ดินราชพัสดุ และเชิญบุ๋มไปให้ถ้อยคำในฐานะพยาน กำหนดให้มาก่อน 12 พ.ย. ตำรวจระบุว่าเป็นการเชิญมาให้ข้อเท็จจริง ไม่ถือว่าเป็นผู้ต้องหา</p>
+        <div class="src"><a href="https://www.amarintv.com/news/social/561605" target="_blank" rel="noopener">อมรินทร์ 30.10</a><a href="https://thethaiger.com/th/news/1625856/" target="_blank" rel="noopener">Thaiger 30.10</a></div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- 01 -->
 <section class="chap wrap" id="brief" aria-labelledby="h-brief">
@@ -910,7 +963,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <section class="chap wrap" id="people" aria-labelledby="h-people">
   <div class="chap-h">
     <div class="no"><b>05</b> / บุคคลและหน่วยงาน</div>
-    <div><h2 id="h-people">ใครอยู่ตรงไหนในคดี ณ 4 พ.ย.</h2><p>คดีหลักเกิดจากที่ออยศรี (เจ้าของเพจ ออยศรีและผองเผือก) ร้องทุกข์ต่อ บช.ก. เมื่อ 30 ต.ค. ตำรวจยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ ผบช.ก. ขอเวลาอีก 1–2 วัน</p></div>
+    <div><h2 id="h-people">ใครอยู่ตรงไหนในคดี ณ 4 พ.ย.</h2><p>คดีหลักเกิดจากที่ออยศรี (เจ้าของเพจ ออยศรีและผองเผือก) ร้องทุกข์ต่อ บช.ก. เมื่อ 30 ต.ค. ตำรวจยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ ผบช.ก. ขอเวลาอีก 1–2 วัน ข่าววันที่ 4 พ.ย. ระบุว่าจะชัดเจนไม่เกินวันศุกร์ 6 พ.ย.</p></div>
   </div>
   <div class="charges"><span class="lab">ข้อหาที่พิจารณา</span><span>ร่วมกันฉ้อโกงประชาชน</span><span>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</span><span>ร่วมกันฟอกเงิน</span></div>
   <div class="dossiers">
@@ -932,14 +985,14 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
   </div>
   <p class="ag-h">หน่วยงานที่เกี่ยวข้อง</p>
   <div class="agencies">
-    <div class="ag rv"><b>บก.ปอศ. / บช.ก.</b><span>คดีมูลนิธิ ตรวจบัญชี การใช้เงินตามวัตถุประสงค์ และเอกสารการจ่าย</span><span class="st hot">คาดชัดเจนภายใน 9 พ.ย.</span></div>
+    <div class="ag rv"><b>บก.ปอศ. / บช.ก.</b><span>คดีมูลนิธิ ตรวจบัญชี การใช้เงินตามวัตถุประสงค์ และเอกสารการจ่าย</span><span class="st hot">คาดชัดเจนเรื่องหมายไม่เกิน 6 พ.ย. · มีรายงานอายัดทรัพย์ 4 พ.ย. (รอยืนยัน)</span></div>
     <div class="ag rv"><b>กองบังคับการปราบปราม</b><span>คดีที่บุ๋มแจ้งความก๊อตและผู้รับเหมา ตำรวจแยกจากคดีมูลนิธิ</span><span class="st">รับแจ้งความ 3 พ.ย.</span></div>
     <div class="ag rv"><b>กรมการปกครอง / มท.</b><span>นายทะเบียนมูลนิธิ ร้องศาลถอดถอนกรรมการ (ป.พ.พ. ม.129) หรือสั่งเลิกมูลนิธิ (ม.131) ได้</span><span class="st hot">เส้นตายส่งเอกสาร 10 พ.ย.</span></div>
     <div class="ag rv"><b>กรมสรรพากร</b><span>ภาษีเงินได้นิติบุคคลและบัญชี</span><span class="st">มีรายงานว่าลงตรวจภาษีแล้ว</span></div>
     <div class="ag rv"><b>ปปง.</b><span>เส้นทางทรัพย์สิน เข้าได้เมื่อมีความผิดมูลฐาน สนธิญา สวัสดี ยื่นให้สอบและอายัดทรัพย์ 2 พ.ย.</span><span class="st">ยังไม่ยืนยันเปิดสอบอย่างเป็นทางการ</span></div>
-    <div class="ag rv"><b>ท้องถิ่นและป่าไม้</b><span>อบต.ไม้ขาวตรวจใบอนุญาตก่อสร้างวิลลา ป่าไม้และกรมการปกครองตรวจที่ดินนครนายกที่โยงกับก๊อต (อยู่นอกผังเงิน)</span><span class="st">อยู่ระหว่างตรวจ</span></div>
+    <div class="ag rv"><b>สภ.บ้านนา และหน่วยงานท้องถิ่น</b><span>สภ.บ้านนา ออกหมายเรียก 4 คน คดีรุกที่ดินราชพัสดุ จ.นครนายก และเชิญบุ๋มให้ถ้อยคำในฐานะพยาน ป่าไม้และกรมการปกครองตรวจที่ดินนครนายกที่โยงกับก๊อต อบต.ไม้ขาวตรวจใบอนุญาตก่อสร้างวิลลา (ทั้งหมดอยู่นอกผังเงิน)</span><span class="st">ให้ไปให้ถ้อยคำที่ สภ.บ้านนา ก่อน 12 พ.ย.</span></div>
   </div>
-  <div class="src" style="margin-top:18px"><a href="https://thestandard.co/investigation-boom-panadda-good-deed-foundation/" target="_blank" rel="noopener">THE STANDARD 02.11</a><a href="https://mgronline.com/crime/detail/9690000105701" target="_blank" rel="noopener">ผู้จัดการ 04.11</a><a href="https://www.bangkokbiznews.com/politics/1258602" target="_blank" rel="noopener">กรุงเทพธุรกิจ 30.10</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1715706/" target="_blank" rel="noopener">Bangkok Insight 02.11</a><a href="https://thairath.co.th/news/crime/2970061" target="_blank" rel="noopener">ไทยรัฐ 03.11</a><a href="https://www.dailynews.co.th/news/6327203/" target="_blank" rel="noopener">เดลินิวส์ 03.11</a><a href="https://mgronline.com/crime/detail/9690000105568" target="_blank" rel="noopener">ผู้จัดการ 03.11</a></div>
+  <div class="src" style="margin-top:18px"><a href="https://thestandard.co/investigation-boom-panadda-good-deed-foundation/" target="_blank" rel="noopener">THE STANDARD 02.11</a><a href="https://mgronline.com/crime/detail/9690000105701" target="_blank" rel="noopener">ผู้จัดการ 04.11</a><a href="https://www.bangkokbiznews.com/politics/1258602" target="_blank" rel="noopener">กรุงเทพธุรกิจ 30.10</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1715706/" target="_blank" rel="noopener">Bangkok Insight 02.11</a><a href="https://thairath.co.th/news/crime/2970061" target="_blank" rel="noopener">ไทยรัฐ 03.11</a><a href="https://www.dailynews.co.th/news/6327203/" target="_blank" rel="noopener">เดลินิวส์ 03.11</a><a href="https://mgronline.com/crime/detail/9690000105568" target="_blank" rel="noopener">ผู้จัดการ 03.11</a><a href="https://www.thaipost.net/criminality-news/1101655/" target="_blank" rel="noopener">ไทยโพสต์ 04.11</a><a href="https://www.amarintv.com/news/social/561605" target="_blank" rel="noopener">อมรินทร์ 30.10</a><a href="https://thethaiger.com/th/news/1625856/" target="_blank" rel="noopener">Thaiger 30.10</a></div>
 </section>
 
 <!-- 06 -->
@@ -955,11 +1008,14 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
         <tr class="grp"><td>เงินที่เข้าผู้รับเหมา</td><td class="n">45 ล้าน</td><td class="w">ช่างเอ๋ ในรายการโหนกระแส 29 ต.ค.</td></tr>
         <tr><td></td><td class="n">45–50 ล้าน</td><td class="w">สนธิญา สวัสดี ในหนังสือถึง ปปง. 2 พ.ย.</td></tr>
         <tr><td></td><td class="n">≈75 ล้าน</td><td class="w">ทนายกุ้ง หลังช่างเอ๋ให้ปากคำ 3 พ.ย.</td></tr>
-        <tr><td></td><td class="n">50 ล้าน</td><td class="w">ยอดในคดีที่บุ๋มแจ้งความก๊อตและผู้รับเหมา (ปรากฏในพาดหัว Thai PBS)</td></tr>
+        <tr><td></td><td class="n">50 ล้าน</td><td class="w">ยอดความเสียหายในคดีที่บุ๋มแจ้งความก๊อตและผู้รับเหมา (พาดหัว Thai PBS และเนื้อข่าว Thaiger 4 พ.ย. ระบุ “กว่า 50 ล้าน”)</td></tr>
         <tr class="grp"><td>เงินที่ถูกเบิกออก</td><td class="n">800 ล้าน</td><td class="w">อั๋น ภูวนาท เล่าต่อจากหนุ่ม กรรชัย</td></tr>
         <tr><td></td><td class="n">ไม่ถึง 800</td><td class="w">สรยุทธ อ้างแหล่งข่าวตำรวจ</td></tr>
         <tr><td></td><td class="n">ไม่มีข้อมูล</td><td class="w">ผบก.ปอศ. 4 พ.ย.</td></tr>
         <tr class="grp"><td>รายการตัวอย่าง 23 ธ.ค. 68</td><td class="n">6 รายการ ≈45 ล้าน</td><td class="w">Thai PBS แสดงจริง 4 รายการ รวม 21 ล้าน</td></tr>
+        <tr class="grp"><td>ทรัพย์ที่มีรายงานว่าอายัด</td><td class="n">กว่า 100 ล้าน</td><td class="w">ข่าว 5 สำนัก 4 พ.ย. ใช้คำว่า “มีรายงาน” หรือ “สะพัด” ตำรวจยังไม่แถลง Thaiger ระบุว่ายังต้องตรวจว่าเป็นยอดเงินคงเหลือจริงหรือไม่</td></tr>
+        <tr class="grp"><td>กำหนดชัดเจนเรื่องหมาย</td><td class="n">ภายใน 9 พ.ย.</td><td class="w">Spacebar 2 พ.ย. อ้าง ผบช.ก.</td></tr>
+        <tr><td></td><td class="n">ไม่เกิน 6 พ.ย.</td><td class="w">ผู้จัดการ แนวหน้า Thaiger 4 พ.ย.</td></tr>
         <tr class="grp"><td>วันจดทะเบียนมูลนิธิ</td><td class="n">30 มี.ค. 2565</td><td class="w">ราชกิจจานุเบกษา ตาม PPTV · Thai PBS ระบุอีกจุดว่า 2 มิ.ย. 2565</td></tr>
       </tbody>
     </table>
@@ -987,9 +1043,10 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     <li class="rv"><span class="d">30.10</span><span class="ev">ออยศรีร้องทุกข์ต่อ บช.ก. · กรมการปกครองแจงอำนาจร้องศาล · สรรพากรแจงว่าบริจาคลดหย่อนภาษีไม่ได้</span></li>
     <li class="rv"><span class="d">02.11</span><span class="ev">ผบช.ก. เผยเงินหมุนเวียนเกือบพันล้าน · สนธิญายื่น ปปง.</span></li>
     <li class="rv big"><span class="d">03.11</span><span class="ev">บุ๋มแจ้งความก๊อตและผู้รับเหมา แถลงขอโทษ · ปอศ. ชี้เข้าข่ายตัวการร่วม · ช่างเอ๋ให้ปากคำ (≈75 ล้าน)</span></li>
-    <li class="rv big"><span class="d">04.11</span><span class="ev">ผบก.ปอศ. ยืนยันมีการใช้ส่วนตัว · มท. เผยไม่เคยส่งงบดุล · ก๊อตรับหมายเรียกพยาน · ตำรวจเรียกผู้รับเหมาอาคารคลอง 8</span></li>
-    <li class="rv next"><span class="d">05–09.11</span><span class="ev">ตำรวจคาดสรุปหมายเรียกผู้ต้องหาหรือหมายจับ</span></li>
+    <li class="rv big"><span class="d">04.11</span><span class="ev">ผบก.ปอศ. ยืนยันมีการใช้ส่วนตัว · มท. เผยไม่เคยส่งงบดุล · ก๊อตรับหมายเรียกพยาน · ตำรวจเรียกผู้รับเหมาอาคารคลอง 8 · มีรายงานอายัดทรัพย์บุ๋มและครอบครัว (ตำรวจยังไม่ยืนยัน)</span></li>
+    <li class="rv next"><span class="d">06.11</span><span class="ev">ตำรวจคาดชัดเจนเรื่องหมายเรียกผู้ต้องหาหรือหมายจับ (ข่าว 4 พ.ย.)</span></li>
     <li class="rv next"><span class="d">10.11</span><span class="ev">เส้นตายมูลนิธิส่งเอกสารการเงินต่อกระทรวงมหาดไทย</span></li>
+    <li class="rv next"><span class="d">12.11</span><span class="ev">กำหนดให้ไปให้ถ้อยคำที่ สภ.บ้านนา คดีรุกที่ดินราชพัสดุ (แยกจากคดีมูลนิธิ)</span></li>
   </ol>
 </section>
 
@@ -997,7 +1054,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <section class="chap wrap" id="sources" aria-labelledby="h-src">
   <div class="chap-h">
     <div class="no"><b>08</b> / แหล่งข่าว</div>
-    <div><h2 id="h-src">ข่าว 32 ชิ้นที่ใช้ในแฟ้มนี้</h2></div>
+    <div><h2 id="h-src">ข่าว 42 ชิ้นที่ใช้ในแฟ้มนี้</h2></div>
   </div>
   <div class="sources">
     <h3>28–29 ต.ค. 2569</h3>
@@ -1047,6 +1104,19 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       <li><a href="https://www.dailynews.co.th/news/6331074/" target="_blank" rel="noopener">เดลินิวส์ · ก๊อตรับหมายเรียก ยื่นหนังสือแสดงเจตนาสุจริต</a></li>
       <li><a href="https://www.thebangkokinsight.com/news/politics-general/general/1716673/" target="_blank" rel="noopener">Bangkok Insight · มูลนิธิไม่เคยส่งงบดุล</a></li>
     </ol>
+    <h3>เพิ่มในอัปเดต 4 พ.ย. 17:30</h3>
+    <ol start="33">
+      <li><a href="https://www.thaipost.net/criminality-news/1101655/" target="_blank" rel="noopener">ไทยโพสต์ · ผบช.ก.เผย 1–2 วันได้ข้อสรุปเรื่องหมาย (4 พ.ย.)</a></li>
+      <li><a href="https://siamrath.co.th/crime/333329" target="_blank" rel="noopener">สยามรัฐ · ปอศ.จ่อออกหมายจับ (4 พ.ย.)</a></li>
+      <li><a href="https://www.siamnews.com/news/crime/56579" target="_blank" rel="noopener">สยามนิวส์ · เปิด 3 ข้อหาที่ตำรวจจ่อแจ้ง (3 พ.ย.)</a></li>
+      <li><a href="https://mgronline.com/crime/detail/9690000105876" target="_blank" rel="noopener">ผู้จัดการ · มีรายงาน ปอศ.อายัดทรัพย์กว่า 100 ล้าน (4 พ.ย.)</a></li>
+      <li><a href="https://www.naewna.com/n/top-stories/148587/" target="_blank" rel="noopener">แนวหน้า · อายัดทรัพย์บุ๋มและคนใกล้ชิด (4 พ.ย.)</a></li>
+      <li><a href="https://thethaiger.com/th/news/1627230/" target="_blank" rel="noopener">Thaiger · ปอศ.อายัดทรัพย์ รอตำรวจยืนยัน (4 พ.ย.)</a></li>
+      <li><a href="https://www.thebangkokinsight.com/news/lifestyle/entertainment/1716747/" target="_blank" rel="noopener">Bangkok Insight · สะพัด อายัดทรัพย์ (4 พ.ย.)</a></li>
+      <li><a href="https://www.amarintv.com/news/crime/561985" target="_blank" rel="noopener">อมรินทร์ทีวี · สะพัด ยึดทรัพย์ 100 ล้าน (4 พ.ย.)</a></li>
+      <li><a href="https://www.amarintv.com/news/social/561605" target="_blank" rel="noopener">อมรินทร์ทีวี · สภ.บ้านนาออกหมายเรียก 4 คน (30 ต.ค.)</a></li>
+      <li><a href="https://thethaiger.com/th/news/1625856/" target="_blank" rel="noopener">Thaiger · สภ.บ้านนาเชิญบุ๋มให้ปากคำ (30 ต.ค.)</a></li>
+    </ol>
   </div>
 </section>
 
@@ -1056,8 +1126,15 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
   <p class="sent">กลับไปดู <a href="#flow-sec">ผังเส้นเงิน</a> หรือ <a href="#exhibits">หลักฐานทีละเส้น</a> หรือ <a href="#sources">แหล่งข่าว</a></p>
   <div class="fine">
     <div><b>ข้อจำกัด</b>รวบรวมจากรายงานข่าวออนไลน์ภาษาไทย ไม่ได้เห็นรายการเดินบัญชี มติกรรมการ หรือสำนวนคดี ยังไม่มีการแจ้งข้อกล่าวหาอย่างเป็นทางการหรือคำพิพากษา ทุกคนที่ถูกพาดพิงยังได้รับการสันนิษฐานว่าบริสุทธิ์</div>
-    <div><b>ข้อมูล ณ</b>เย็นวันที่ 4 พฤศจิกายน 2569 สถานการณ์เปลี่ยนเร็ว ควรเช็กข่าวล่าสุดก่อนนำไปใช้ต่อ</div>
+    <div><b>ข้อมูล ณ</b>วันที่ 4 พฤศจิกายน 2569 เวลา 17:30 น. สถานการณ์เปลี่ยนเร็ว ควรเช็กข่าวล่าสุดก่อนนำไปใช้ต่อ</div>
     <div><b>ซอร์สโค้ด</b><a href="https://github.com/kawin-work/follow-the-money" target="_blank" rel="noopener">github.com/kawin-work/follow-the-money</a> · ฟอนต์ Noto Serif Thai, IBM Plex Sans Thai, JetBrains Mono (SIL OFL)</div>
+  </div>
+  <div class="log">
+    <b>บันทึกการแก้ไข</b>
+    <ul>
+      <li><span class="mono">04.11.2569 · 17:30</span> เพิ่มสถานะเรื่องหมาย ข่าวอายัดทรัพย์ที่ยังรอยืนยัน และหมายเรียกของ สภ.บ้านนา เพิ่มแหล่งข่าว 10 ชิ้น แก้จำนวนสำนักข่าวที่หัวเว็บ ซึ่งเดิมเขียน 16 แต่ที่ถูกคือ 14 (หลังอัปเดตเป็น 18)</li>
+      <li><span class="mono">04.11.2569</span> เผยแพร่ครั้งแรก</li>
+    </ul>
   </div>
 </footer>
 </main>
