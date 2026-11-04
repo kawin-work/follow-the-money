@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Follow the Money · เส้นทางเงิน มูลนิธิองค์กรทำดี</title>
+<meta name="description" content="ตามรอยเส้นทางเงินมูลนิธิองค์กรทำดีจากรายงานข่าว 28 ต.ค.–4 พ.ย. 2569 แยกสิ่งที่ตำรวจแถลง คำอ้างของคู่กรณี และข่าวที่ยังไม่ยืนยัน พร้อมแหล่งข่าวทุกเส้น">
+<meta name="theme-color" content="#050607">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Follow the Money · เส้นทางเงิน มูลนิธิองค์กรทำดี">
+<meta property="og:description" content="ผังเส้นทางเงินจากข่าว 32 ชิ้น แยกสิ่งที่ตำรวจแถลง คำอ้างของคู่กรณี และข่าวที่ยังไม่ยืนยัน">
+<meta property="og:image" content="https://kawin-work.github.io/follow-the-money/og.jpg">
+<meta property="og:url" content="https://kawin-work.github.io/follow-the-money/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050607'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23ECE7DE' stroke-width='2'/%3E%3Cpath d='M16 3v8M16 21v8M3 16h8M21 16h8' stroke='%23ECE7DE' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23FF5440'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Thai:wght@400;600&display=swap">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+
+/* Layout: a case file opened in a dark room — cinematic hero with drifting evidence slips, then a lit evidence table (the flow), exhibits, ledger slip, dossiers, timeline, sources */
+:root{
+  --bg:#050607; --bg2:#0A0C0F; --panel:#0D1014; --panel2:#12161B;
+  --ink:#ECE7DE; --ink2:#BDB7AD; --dim:#7F858D; --line:#21262C; --line2:#323840;
+  --off:#7FA6FF; --claim:#E2A443; --unv:#B48FFF; --neu:#6E7680; --flag:#FF5440;
+  --off-bg:rgba(127,166,255,.11); --claim-bg:rgba(226,164,67,.12); --unv-bg:rgba(180,143,255,.12); --flag-bg:rgba(255,84,64,.12);
+  --paper:#E8E2D4; --paper-ink:#1A1813;
+  --f-disp:"Noto Serif Thai","Noto Serif",Georgia,"Times New Roman",serif;
+  --f-body:"IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+  --gutR:max(20px,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-disp);font-weight:600;line-height:1.25;text-wrap:balance}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--off);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:8px 14px;z-index:200}
+.skip:focus{left:var(--gut)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.sc{font-family:var(--f-disp);font-variant:small-caps;text-transform:lowercase;letter-spacing:.28em}
+.wrap{max-width:1320px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutR)}
+
+/* grain + vignette */
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* ---------- loader ---------- */
+#loader{display:none}
+.js #loader{display:flex;position:fixed;inset:0;z-index:150;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .6s ease,visibility .6s}
+#loader.done{opacity:0;visibility:hidden}
+#loader .mark{width:54px;height:54px}
+#loader .count{font-family:var(--f-mono);font-size:13px;letter-spacing:.2em;color:var(--dim)}
+#loader .lbl{font-size:12px;color:var(--dim);letter-spacing:.08em}
+
+/* ---------- top bar ---------- */
+.bar{position:fixed;top:0;left:0;right:0;z-index:100;padding-top:calc(env(safe-area-inset-top,0px) + 18px);padding-bottom:14px;padding-left:var(--gut);padding-right:var(--gutR);display:flex;align-items:center;justify-content:space-between;gap:16px;mix-blend-mode:normal;transition:background .3s,backdrop-filter .3s}
+.bar.solid{background:rgba(5,6,7,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:26px;height:26px;flex:none}
+.brand .t1{font-size:15px;line-height:1.1;display:block}
+.brand .t2{font-family:var(--f-mono);font-size:10.5px;color:var(--dim);letter-spacing:.12em;display:block}
+.bar-r{display:flex;gap:10px;align-items:center}
+.pillbtn{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line2);background:transparent;color:var(--ink);border-radius:99px;padding:8px 16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s,border-color .2s}
+.pillbtn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pillbtn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pillbtn.solid:hover{background:transparent;color:var(--ink)}
+.burger{width:14px;height:8px;position:relative;display:inline-block}
+.burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor}
+.burger::before{top:0}.burger::after{bottom:0}
+@media (max-width:640px){.bar .hide-sm{display:none}}
+
+/* ---------- menu overlay ---------- */
+#menu{position:fixed;inset:0;z-index:120;background:rgba(5,6,7,.97);display:flex;flex-direction:column;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 90px) var(--gutR) calc(env(safe-area-inset-bottom,0px) + 40px) var(--gut);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+#menu.open{opacity:1;visibility:visible}
+#menu ol{list-style:none;margin:0 auto;padding:0;max-width:1100px;width:100%;display:flex;flex-direction:column;gap:4px}
+#menu li a{display:flex;align-items:baseline;gap:18px;text-decoration:none;font-family:var(--f-disp);font-size:clamp(26px,4.6vw,56px);line-height:1.3;color:var(--ink2);transition:color .2s,transform .3s}
+#menu li a span{font-family:var(--f-mono);font-size:12px;color:var(--dim);letter-spacing:.1em;min-width:28px}
+#menu li a:hover,#menu li a:focus-visible{color:var(--ink);transform:translateX(8px)}
+#menu .close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 18px);right:var(--gutR)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;padding-top:110px;padding-bottom:28px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(ellipse 70% 60% at 72% 42%,rgba(127,166,255,.07),transparent 70%),
+  radial-gradient(ellipse 120% 90% at 50% 50%,transparent 55%,rgba(0,0,0,.85) 100%)}
+.gridlines{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);
+  background-size:calc(100% / 12) 25%;mask-image:radial-gradient(ellipse 80% 70% at 60% 45%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 60% 45%,#000 30%,transparent 80%)}
+.frags{position:absolute;inset:0;z-index:0;pointer-events:none}
+.frag{position:absolute;left:var(--x);top:var(--y);transform:translate3d(var(--px,0px),var(--py,0px),0);opacity:calc(.22 + var(--d) * .7);filter:blur(calc((1 - var(--d)) * 2.2px));will-change:transform}
+.frag>span{display:block;transform:rotate(var(--r)) scale(calc(.72 + var(--d) * .4));transform-origin:left top;animation:drift var(--t,9s) ease-in-out infinite alternate}
+@keyframes drift{from{translate:0 0}to{translate:0 -22px}}
+.slip{font-family:var(--f-mono);font-size:13px;letter-spacing:.02em;white-space:nowrap;color:var(--ink2);background:rgba(13,16,20,.82);border:1px solid var(--line2);border-left:3px solid var(--c,var(--line2));padding:8px 14px;line-height:1.5}
+.slip b{color:var(--ink);font-weight:500}
+.slip small{display:block;font-size:10.5px;color:var(--dim);letter-spacing:.12em}
+.slip.thai{font-family:var(--f-body);font-size:14px}
+.slip.unv{border:1px dashed var(--unv);border-left:3px dotted var(--unv);color:var(--unv)}
+.slip.big b{font-size:26px;letter-spacing:.01em}
+.redact{display:inline-block;width:120px;height:.9em;background:var(--ink);vertical-align:-1px;margin-left:6px}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:end}
+.kicker{font-size:13px;color:var(--dim);margin-bottom:18px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--flag);box-shadow:0 0 0 0 rgba(255,84,64,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(255,84,64,0)}100%{box-shadow:0 0 0 0 rgba(255,84,64,0)}}
+.h1{font-size:clamp(54px,11.5vw,168px);line-height:1.08;letter-spacing:-.01em;font-weight:600}
+.h1 .l2{display:block;font-size:.47em;line-height:1.3;color:var(--ink2);font-weight:400;margin-top:.15em}
+.dek{max-width:56ch;margin-top:26px;font-size:17px;color:var(--ink2);font-weight:300}
+.cta{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px}
+.cta a{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink2);padding-bottom:6px;display:inline-flex;gap:28px;min-width:230px;justify-content:space-between;transition:border-color .2s,color .2s}
+.cta a .th{font-family:var(--f-body);text-transform:none;letter-spacing:0;font-size:15px}
+.cta a:hover{border-color:var(--ink);color:var(--ink)}
+.badge{border:1px solid var(--line2);background:rgba(10,12,15,.7);padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.badge .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:7px}
+.badge .row:last-child{border-bottom:0;padding-bottom:0}
+.badge .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.badge .v{text-align:right}
+.hero-foot{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px;margin-top:36px;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.hero-foot .th{font-family:var(--f-body);text-transform:none;letter-spacing:.02em;font-size:12.5px}
+@media (max-width:900px){.hero-in{grid-template-columns:1fr}.badge{max-width:420px}}
+@media (max-width:760px){
+  .hero{justify-content:flex-end;padding-top:46svh}
+  .frag{left:var(--mx,var(--x));top:var(--my,var(--y))}
+  .frag.d-hide{display:none}
+  .cta a{min-width:0;flex:1 1 220px}
+  .hero-foot .hint{display:none}
+}
+
+/* ---------- ticker ---------- */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--bg2)}
+.ticker .track{display:flex;width:max-content;animation:tick 60s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.ticker ul{display:flex;list-style:none;margin:0;padding:14px 0;gap:0}
+.ticker li{display:flex;align-items:center;gap:22px;padding-right:22px;font-size:14.5px;white-space:nowrap;color:var(--ink2)}
+.ticker li::after{content:"✦";color:var(--flag);font-size:11px}
+.ticker li b{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section.chap{padding-block:clamp(72px,10vw,140px) 0}
+.chap-h{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;margin-bottom:clamp(32px,4vw,56px);align-items:start}
+.chap-h .no{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;padding-top:14px;border-top:1px solid var(--line2)}
+.chap-h .no b{color:var(--ink);font-weight:500}
+.chap-h h2{font-size:clamp(32px,4.6vw,64px);line-height:1.2}
+.chap-h p{color:var(--ink2);max-width:62ch;margin-top:14px;font-weight:300;font-size:17px}
+@media (max-width:760px){.chap-h{grid-template-columns:1fr;gap:14px}}
+
+/* tags */
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:400;padding:2px 10px;border-radius:99px;white-space:nowrap;line-height:1.7}
+.tag::before{content:"";width:16px;height:0;border-top:2px solid currentColor}
+.t-off{color:var(--off);background:var(--off-bg)}
+.t-claim{color:var(--claim);background:var(--claim-bg)}.t-claim::before{border-top-style:dashed}
+.t-unv{color:var(--unv);background:var(--unv-bg)}.t-unv::before{border-top-style:dotted;border-top-width:3px}
+.t-neu{color:var(--dim);background:rgba(255,255,255,.05)}
+.t-flag{color:var(--flag);background:var(--flag-bg)}.t-flag::before{content:"!";width:auto;border:0;font-weight:700}
+
+/* 01 brief */
+.brief{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(28px,5vw,72px);align-items:start}
+.brief .lead{font-family:var(--f-disp);font-size:clamp(22px,2.4vw,32px);line-height:1.6;font-weight:400}
+.brief .lead em{font-style:normal;color:var(--off)}
+.brief .lead em.c{color:var(--claim)}
+.warn{border:1px solid var(--line2);padding:20px;display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:var(--ink2);background:var(--bg2)}
+.warn h3{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--flag);font-weight:500}
+@media (max-width:900px){.brief{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line2);margin-top:clamp(48px,6vw,80px)}
+.stat{padding:22px 22px 6px 0;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--line);padding-left:22px}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--f-mono);font-size:clamp(34px,4vw,56px);line-height:1;font-weight:400;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat .n small{font-family:var(--f-body);font-size:15px;letter-spacing:0;margin-left:8px;color:var(--ink2)}
+.stat .n .pre{font-family:var(--f-body);font-size:15px;letter-spacing:0;margin-right:6px;color:var(--ink2)}
+.stat .w{font-size:14.5px}
+.stat .s{font-size:12.5px;color:var(--dim)}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{border-right:0;padding-left:0;border-bottom:1px solid var(--line);padding-bottom:20px}.stat:nth-child(odd){padding-right:16px}}
+@media (max-width:460px){.stats{grid-template-columns:1fr}}
+
+/* 02 flow */
+.board{border:1px solid var(--line2);background:var(--bg2);position:relative}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fbtn{font-family:var(--f-body);font-size:13px;color:var(--ink2);background:transparent;border:1px solid var(--line2);border-radius:99px;padding:5px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.fbtn i{width:16px;height:0;border-top:2px solid currentColor;display:inline-block}
+.fbtn[data-f="off"] i{color:var(--off)}
+.fbtn[data-f="claim"] i{border-top-style:dashed;color:var(--claim)}
+.fbtn[data-f="unv"] i{border-top-style:dotted;border-top-width:3px;color:var(--unv)}
+.fbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fbtn:hover{border-color:var(--ink)}
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-color:var(--line2) transparent}
+#flow{display:block;width:100%;min-width:1040px;height:auto}
+.subtitle{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;padding:16px;border-top:1px solid var(--line);min-height:96px}
+.subtitle .idx{font-family:var(--f-mono);font-size:22px;letter-spacing:.02em;color:var(--dim);min-width:74px}
+.subtitle .idx b{color:var(--ink);font-weight:500}
+.subtitle .txt{font-size:15.5px;display:flex;flex-direction:column;gap:6px}
+.subtitle .txt .ttl{font-weight:600}
+.subtitle .txt a{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line2);align-self:flex-start}
+.subtitle .txt a:hover{color:var(--ink)}
+.ctrls{display:flex;gap:6px}
+.ibtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;font-family:var(--f-mono);font-size:14px;transition:all .2s}
+.ibtn:hover{background:var(--ink);color:var(--bg)}
+.ibtn svg{width:14px;height:14px;fill:currentColor}
+.hint-x{display:none;font-size:12.5px;color:var(--dim);padding:10px 16px 0}
+@media (max-width:1080px){.hint-x{display:block}}
+@media (max-width:640px){.subtitle{grid-template-columns:1fr;gap:10px}.ctrls{order:-1;justify-content:space-between;align-items:center}.subtitle .idx{order:-2}}
+.legend{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--dim)}
+.legend .fl{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--flag);color:var(--bg);font-weight:700;font-size:11px;margin-right:6px}
+
+/* svg */
+#flow text{font-family:var(--f-body);fill:var(--ink)}
+#flow .nt{font-size:14.5px;font-weight:600}
+#flow .ns{font-size:12px;fill:var(--dim)}
+#flow .nsx{font-size:12px;font-weight:600}
+#flow .lbl{font-size:12.5px;font-weight:600}
+#flow .col{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;fill:var(--dim)}
+#flow .node{fill:var(--panel);stroke:var(--line2);stroke-width:1.2}
+#flow .node.key{stroke:#6A6F77;stroke-width:1.3}
+#flow .node.dot{stroke:var(--unv);stroke-dasharray:2 4;stroke-linecap:round;stroke-width:1.6;fill:rgba(180,143,255,.05)}
+#flow .hub{fill:#0F1318;stroke:var(--line2);stroke-width:1.2}
+#flow .gate{fill:var(--flag-bg);stroke:var(--flag);stroke-width:1}
+#flow .ctrl{fill:var(--panel);stroke:var(--flag);stroke-width:1.1;stroke-dasharray:5 3}
+#flow .chip{fill:var(--unv-bg);stroke:var(--unv);stroke-dasharray:2 3;stroke-linecap:round}
+#flow .c-off{fill:var(--off)}#flow .c-claim{fill:var(--claim)}#flow .c-unv{fill:var(--unv)}#flow .c-flag{fill:var(--flag)}#flow .c-dim{fill:var(--dim)}
+#flow .e{fill:none;stroke-width:2}
+#flow .e-off{stroke:var(--off)}
+#flow .e-claim{stroke:var(--claim);stroke-dasharray:8 5}
+#flow .e-unv{stroke:var(--unv);stroke-dasharray:1.5 5;stroke-linecap:round;stroke-width:2.6}
+#flow .e-neu{stroke:var(--neu);stroke-width:1.7}
+#flow .e-own{stroke:var(--dim);stroke-width:1.2;stroke-dasharray:3 3;fill:none}
+#flow .e-link{stroke:var(--flag);stroke-width:1;stroke-dasharray:3 3;fill:none}
+#flow .ah-off{fill:var(--off)}#flow .ah-claim{fill:var(--claim)}#flow .ah-unv{fill:var(--unv)}#flow .ah-neu{fill:var(--neu)}
+#flow .pt{r:3}
+#flow .pt-off{fill:var(--off)}#flow .pt-claim{fill:var(--claim)}#flow .pt-unv{fill:var(--unv)}#flow .pt-neu{fill:var(--neu)}
+#flow .tagc circle{fill:var(--bg2);stroke-width:1.5}
+#flow .tagc text{font-family:var(--f-mono);font-size:10.5px;font-weight:500;text-anchor:middle;dominant-baseline:central}
+#flow .tagc.off circle{stroke:var(--off)}#flow .tagc.off text{fill:var(--off)}
+#flow .tagc.claim circle{stroke:var(--claim)}#flow .tagc.claim text{fill:var(--claim)}
+#flow .tagc.unv circle{stroke:var(--unv)}#flow .tagc.unv text{fill:var(--unv)}
+#flow .tagc.neu circle{stroke:var(--neu)}#flow .tagc.neu text{fill:var(--dim)}
+#flow .flag circle{fill:var(--flag)}#flow .flag text{fill:var(--bg);font-weight:700;font-size:12px;text-anchor:middle;dominant-baseline:central}
+#flow .edge{cursor:pointer;transition:opacity .25s}
+#flow .hit{stroke:transparent;stroke-width:16;fill:none;pointer-events:stroke}
+#flow.focusing .edge:not(.on){opacity:.12}
+#flow.filtering .edge:not(.keep){opacity:.1}
+#flow .edge.on .e{stroke-width:3.2}
+#flow .edge:focus{outline:none}
+#flow .edge:focus-visible .e{stroke-width:3.4}
+
+/* 03 exhibits */
+.exhibits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line2)}
+@media (max-width:900px){.exhibits{grid-template-columns:1fr}}
+.ex{padding:26px 26px 28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0;scroll-margin-top:100px;transition:background .3s}
+.ex:nth-child(even){padding-left:26px;padding-right:0;border-left:1px solid var(--line)}
+@media (max-width:900px){.ex,.ex:nth-child(even){padding-left:0;padding-right:0;border-left:0}}
+.ex.flash{background:rgba(127,166,255,.07)}
+.ex .head{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ex .num{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
+.ex h3{font-size:clamp(20px,1.9vw,25px);line-height:1.45}
+.ex ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;color:var(--ink2);font-weight:300}
+.ex li::marker{color:var(--line2)}
+.ex q{quotes:"“" "”";color:var(--ink);font-weight:400}
+.who{font-size:12px;color:var(--dim);white-space:nowrap;font-weight:400}
+.src{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em}
+.src a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line2)}
+.src a:hover{color:var(--ink);border-color:var(--ink)}
+.src::before{content:"แหล่ง";font-family:var(--f-body);font-size:12px;color:var(--dim);letter-spacing:0;margin-right:2px}
+
+/* 04 ledger */
+.ledger{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:960px){.ledger{grid-template-columns:1fr}}
+.paper{background:var(--paper);color:var(--paper-ink);font-family:var(--f-mono);font-size:13px;padding:26px 24px 34px;position:relative;transform:rotate(-1.2deg);box-shadow:0 30px 60px rgba(0,0,0,.6);max-width:480px;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 10px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/16px 10px repeat-x}
+.paper .ph{text-align:center;border-bottom:1px dashed rgba(26,24,19,.5);padding-bottom:12px;margin-bottom:12px;display:flex;flex-direction:column;gap:3px}
+.paper .ph b{font-size:14px;letter-spacing:.14em}
+.paper .th{font-family:var(--f-body);font-size:13.5px}
+.paper .meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:2px 0}
+.paper .rd{display:inline-block;background:var(--paper-ink);color:var(--paper);padding:0 6px;font-size:11px;letter-spacing:.06em}
+.paper table{width:100%;border-collapse:collapse;margin:12px 0}
+.paper td{padding:6px 0;vertical-align:top;border-bottom:1px dotted rgba(26,24,19,.35)}
+.paper td.a{text-align:right;white-space:nowrap;padding-left:10px}
+.paper td.t{white-space:nowrap;padding-right:10px}
+.paper tr.ret td{background:linear-gradient(transparent 62%,rgba(255,84,64,.3) 62%)}
+.paper .tot{display:flex;justify-content:space-between;border-top:1px dashed rgba(26,24,19,.5);padding-top:10px;font-weight:500}
+.paper .fn{margin-top:14px;font-family:var(--f-body);font-size:12.5px;line-height:1.6;color:#4A463D}
+.paper .fn a{color:#2B4E9A}
+.controls{display:flex;flex-direction:column;border-top:1px solid var(--line2)}
+.crow{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.crow .rule{font-weight:600;font-size:15px}
+.crow .rule span{display:block;font-weight:300;color:var(--dim);font-size:13.5px;margin-top:2px}
+.crow .seen{font-size:15px;color:var(--ink2);font-weight:300}
+.crow.bad .rule{color:var(--flag)}
+@media (max-width:560px){.crow{grid-template-columns:1fr;gap:6px}}
+
+/* 05 people */
+.charges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.charges span{border:1px solid var(--ink2);padding:6px 14px;font-size:14.5px}
+.charges .lab{border:0;padding-left:0;color:var(--dim);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;align-self:center}
+.dossiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:960px){.dossiers{grid-template-columns:1fr}}
+.dos{border:1px solid var(--line2);background:var(--bg2);display:flex;flex-direction:column;min-width:0}
+.dos .top{display:flex;gap:16px;align-items:center;padding:18px;border-bottom:1px solid var(--line)}
+.dos .ini{width:64px;height:64px;flex:none;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--f-disp);font-size:30px;color:var(--ink2);background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(255,255,255,.025) 6px 7px)}
+.dos h3{font-size:22px}
+.dos .role{font-size:13px;color:var(--dim)}
+.dos .pv{padding:16px 18px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;color:var(--ink2);font-weight:300;border-bottom:1px solid var(--line)}
+.dos .pv:last-child{border-bottom:0}
+.dos .pv .tag{align-self:flex-start}
+.agencies{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--line2)}
+@media (max-width:960px){.agencies{grid-template-columns:1fr}}
+.ag{padding:20px 20px 22px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-width:0}
+.ag:not(:nth-child(3n+1)){padding-left:20px;border-left:1px solid var(--line)}
+@media (max-width:960px){.ag:not(:nth-child(3n+1)){padding-left:0;border-left:0}}
+.ag b{font-family:var(--f-disp);font-size:18px;font-weight:600}
+.ag span{font-size:14.5px;color:var(--ink2);font-weight:300}
+.ag .st{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim)}
+.ag .st.hot{color:var(--flag)}
+.ag-h{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:56px}
+
+/* 06 conflicts */
+.tbl{overflow-x:auto;border-top:1px solid var(--line2)}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:14px 16px 14px 0;border-bottom:1px solid var(--line)}
+.tbl th{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:400}
+.tbl td.n{font-family:var(--f-mono);white-space:nowrap;font-size:16px}
+.tbl td.w{color:var(--ink2);font-weight:300}
+.tbl tr.grp td:first-child{font-weight:600}
+
+/* 07 timeline */
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--line2)}
+.tl li{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.tl .d{font-family:var(--f-mono);font-size:clamp(15px,1.5vw,19px);color:var(--ink2)}
+.tl .ev{font-size:15.5px;color:var(--ink2);font-weight:300}
+.tl li.big .d{color:var(--ink)}
+.tl li.big .ev{color:var(--ink);font-weight:400}
+.tl li.next .d{color:var(--flag)}
+.tl li.next .ev{color:var(--ink)}
+@media (max-width:640px){.tl li{grid-template-columns:1fr;gap:4px}}
+
+/* 08 sources */
+.sources{columns:2 380px;column-gap:48px;font-size:14.5px}
+.sources h3{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;color:var(--dim);font-weight:400;margin:18px 0 8px;break-after:avoid;text-transform:uppercase}
+.sources h3:first-child{margin-top:0}
+.sources ol{margin:0;padding-left:24px;color:var(--dim)}
+.sources li{break-inside:avoid;margin-bottom:6px;font-family:var(--f-mono);font-size:12px}
+.sources li a{font-family:var(--f-body);font-size:14.5px;color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--line2)}
+.sources li a:hover{color:var(--ink);border-color:var(--ink)}
+
+/* footer */
+footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);padding-top:clamp(56px,8vw,110px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 40px)}
+.quote{font-family:var(--f-disp);font-size:clamp(34px,6.4vw,92px);line-height:1.25;max-width:16ch}
+.quote-by{margin-top:18px;font-size:14px;color:var(--dim)}
+.sent{margin-top:clamp(56px,7vw,96px);font-family:var(--f-disp);font-size:clamp(18px,2vw,24px);color:var(--dim);line-height:1.8}
+.sent a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2);font-variant:small-caps}
+.sent a:hover{border-color:var(--ink)}
+.fine{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:56px;font-size:13px;color:var(--dim);border-top:1px solid var(--line);padding-top:22px}
+.fine b{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);font-weight:400;margin-bottom:6px}
+.fine a{color:var(--ink2)}
+@media (max-width:860px){.fine{grid-template-columns:1fr}}
+
+/* reveal */
+.js .rv.pre{opacity:0;transform:translateY(26px)}
+.rv{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+
+/* cursor */
+#cur{position:fixed;left:0;top:0;width:28px;height:28px;margin:-14px 0 0 -14px;pointer-events:none;z-index:140;display:none;mix-blend-mode:difference;transition:width .25s,height .25s,margin .25s}
+#cur::before,#cur::after{content:"";position:absolute;background:#fff}
+#cur::before{left:50%;top:0;bottom:0;width:1px}
+#cur::after{top:50%;left:0;right:0;height:1px}
+#cur.big{width:56px;height:56px;margin:-28px 0 0 -28px}
+@media (pointer:fine){.js #cur{display:block}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js #cur{display:none}
+  .js .rv.pre{opacity:1;transform:none}
+  .ticker .track{width:auto;flex-wrap:wrap}
+  .ticker ul[aria-hidden]{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#brief">ข้ามไปที่เนื้อหา</a>
+
+<div id="loader" aria-hidden="true">
+  <svg class="mark" viewBox="0 0 54 54"><circle cx="27" cy="27" r="17" fill="none" stroke="#ECE7DE" stroke-width="1.2"/><path d="M27 2v14M27 38v14M2 27h14M38 27h14" stroke="#ECE7DE" stroke-width="1.2"/><circle cx="27" cy="27" r="2.5" fill="#FF5440"/></svg>
+  <span class="count" id="lcount">000</span>
+  <span class="lbl">กำลังเปิดแฟ้ม</span>
+</div>
+<div id="cur" aria-hidden="true"></div>
+
+<header class="bar" id="bar">
+  <a class="brand" href="#top" aria-label="Follow the Money กลับด้านบน">
+    <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M13 1v7M13 18v7M1 13h7M18 13h7" stroke="currentColor" stroke-width="1.3"/><circle cx="13" cy="13" r="1.8" fill="#FF5440"/></svg>
+    <span><span class="t1 sc">Follow the Money</span><span class="t2">แฟ้ม 2569 · องค์กรทำดี</span></span>
+  </a>
+  <div class="bar-r">
+    <a class="pillbtn solid hide-sm" href="#flow-sec">ผังเส้นเงิน ↘</a>
+    <button class="pillbtn" id="menuBtn" aria-expanded="false" aria-controls="menu">เมนู <span class="burger" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="สารบัญ" aria-hidden="true">
+  <button class="pillbtn close" id="menuClose">ปิด ✕</button>
+  <ol>
+    <li><a href="#brief"><span>01</span>สรุปคดี</a></li>
+    <li><a href="#flow-sec"><span>02</span>ผังเส้นเงิน</a></li>
+    <li><a href="#exhibits"><span>03</span>หลักฐานทีละเส้น</a></li>
+    <li><a href="#ledger"><span>04</span>สมุดบัญชี</a></li>
+    <li><a href="#people"><span>05</span>บุคคลและหน่วยงาน</a></li>
+    <li><a href="#conflicts"><span>06</span>ตัวเลขที่ยังขัดกัน</a></li>
+    <li><a href="#timeline"><span>07</span>ไทม์ไลน์</a></li>
+    <li><a href="#sources"><span>08</span>แหล่งข่าว</a></li>
+  </ol>
+</nav>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="gridlines" aria-hidden="true"></div>
+  <div class="frags" id="frags" aria-hidden="true">
+    <div class="frag" style="--x:61%;--y:16%;--mx:4%;--my:13%;--d:.92;--r:-4deg;--t:8s"><span class="slip" style="--c:var(--off)"><small>23.12.2568 · 16:47</small><b>3,600,000.00</b> → ผู้รับเหมา</span></div>
+    <div class="frag d-hide" style="--x:75%;--y:29%;--d:.62;--r:3deg;--t:10s"><span class="slip" style="--c:var(--off)"><small>23.12.2568 · 16:57</small><b>13,700,000.00</b></span></div>
+    <div class="frag" style="--x:70%;--y:43%;--mx:6%;--my:31%;--d:1;--r:-2deg;--t:7s"><span class="slip" style="--c:var(--flag)"><small>23.12.2568 · 21:00</small><b>1,900,000.00</b> → สามี</span></div>
+    <div class="frag" style="--x:80%;--y:57%;--mx:30%;--my:5%;--d:.5;--r:5deg;--t:11s"><span class="slip thai">องค์กรทำดี โดย น.ส.ปนัดดา</span></div>
+    <div class="frag d-hide" style="--x:50%;--y:58%;--d:.74;--r:-6deg;--t:9s"><span class="slip thai" style="--c:var(--flag)">ข้อ 31 · ประธานอนุมัติ ≤ 500,000 บาท/ครั้ง</span></div>
+    <div class="frag d-hide" style="--x:86%;--y:13%;--d:.36;--r:8deg;--t:12s"><span class="slip thai">02:00 น. · กรรมการไม่รับรู้</span></div>
+    <div class="frag" style="--x:64%;--y:67%;--mx:30%;--my:21%;--d:.86;--r:2deg;--t:9s"><span class="slip big" style="--c:var(--claim)"><small>ฝั่งผู้รับเหมาอ้าง</small><b>≈ 75,000,000</b></span></div>
+    <div class="frag d-hide" style="--x:88%;--y:40%;--d:.46;--r:-3deg;--t:10s"><span class="slip thai" style="--c:var(--flag)">งบดุลที่ส่ง มท. · 0 ฉบับ</span></div>
+    <div class="frag d-hide" style="--x:50%;--y:7%;--d:.3;--r:1deg;--t:13s"><span class="slip thai">ธนาคาร<span class="redact"></span></span></div>
+    <div class="frag" style="--x:90%;--y:70%;--mx:50%;--my:39%;--d:.56;--r:-7deg;--t:11s"><span class="slip thai">พูลวิลลา 8 หลัง · ต.ไม้ขาว</span></div>
+    <div class="frag d-hide" style="--x:45%;--y:85%;--d:.42;--r:6deg;--t:12s"><span class="slip unv thai">800 ล้าน ? ยังไม่ยืนยัน</span></div>
+    <div class="frag d-hide" style="--x:7%;--y:12%;--d:.24;--r:-5deg;--t:14s"><span class="slip">กท 3275</span></div>
+    <div class="frag d-hide" style="--x:25%;--y:88%;--d:.28;--r:4deg;--t:13s"><span class="slip unv thai">1.8 ล้านธุรกรรม ?</span></div>
+  </div>
+
+  <div class="wrap hero-in">
+    <div>
+      <div class="kicker"><span class="dot" aria-hidden="true"></span><span>อยู่ระหว่างสอบสวน · รวบรวมจากข่าว 28 ต.ค. – 4 พ.ย. 2569</span></div>
+      <h1 class="h1" id="h1">ตามรอยเงิน<span class="l2">มูลนิธิองค์กรทำดี</span></h1>
+      <p class="dek">เงินบริจาคเข้าทั้งบัญชีมูลนิธิและบัญชีชื่อบุคคล ก่อนส่วนหนึ่งไปถึงผู้รับเหมาพูลวิลลาที่ภูเก็ต แล้ววนกลับไปหาสามีของประธานมูลนิธิ ผังนี้แยกว่าเส้นไหนตำรวจแถลง เส้นไหนเป็นคำอ้างของคู่กรณี และเส้นไหนยังไม่มีใครยืนยัน</p>
+      <div class="cta">
+        <a href="#flow-sec"><span class="th">ดูผังเส้นเงิน</span><span>→</span></a>
+        <a href="#exhibits"><span class="th">อ่านหลักฐาน 11 เส้น</span><span>→</span></a>
+      </div>
+    </div>
+    <aside class="badge" aria-label="ข้อมูลแฟ้ม">
+      <div class="row"><span class="k">อัปเดต</span><span class="v mono">04.11.2569 · 18:00</span></div>
+      <div class="row"><span class="k">แหล่งข่าว</span><span class="v">32 ชิ้น · 16 สำนัก</span></div>
+      <div class="row"><span class="k">สถานะ</span><span class="v">ยังไม่ออกหมาย ไม่มีคำพิพากษา</span></div>
+    </aside>
+  </div>
+  <div class="wrap hero-foot">
+    <span>↓ <span class="th">เลื่อนลงเพื่อเปิดแฟ้ม</span></span>
+    <span class="hint th">ขยับเมาส์เพื่อส่องหลักฐาน</span>
+    <span>Bangkok · 13.75°N 100.50°E</span>
+  </div>
+</section>
+
+<div class="ticker" aria-label="ประเด็นล่าสุด">
+  <div class="track">
+    <ul>
+      <li><b>ข้อหาที่พิจารณา</b>ร่วมกันฉ้อโกงประชาชน</li>
+      <li>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</li>
+      <li>ร่วมกันฟอกเงิน</li>
+      <li><b>4 พ.ย.</b>ยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ</li>
+      <li><b>9 พ.ย.</b>ตำรวจคาดสรุปผล</li>
+      <li><b>10 พ.ย.</b>เส้นตายส่งเอกสารการเงินต่อกระทรวงมหาดไทย</li>
+      <li><b>29 ต.ค.</b>มูลนิธิหยุดรับบริจาคทุกช่องทาง</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li><b>ข้อหาที่พิจารณา</b>ร่วมกันฉ้อโกงประชาชน</li>
+      <li>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</li>
+      <li>ร่วมกันฟอกเงิน</li>
+      <li><b>4 พ.ย.</b>ยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ</li>
+      <li><b>9 พ.ย.</b>ตำรวจคาดสรุปผล</li>
+      <li><b>10 พ.ย.</b>เส้นตายส่งเอกสารการเงินต่อกระทรวงมหาดไทย</li>
+      <li><b>29 ต.ค.</b>มูลนิธิหยุดรับบริจาคทุกช่องทาง</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 01 -->
+<section class="chap wrap" id="brief" aria-labelledby="h-brief">
+  <div class="chap-h">
+    <div class="no"><b>01</b> / สรุปคดี</div>
+    <div><h2 id="h-brief">สามสิบวินาทีที่ควรรู้</h2></div>
+  </div>
+  <div class="brief rv">
+    <p class="lead">ตำรวจ ปอศ. แถลงว่าบุ๋ม ปนัดดา <em>โอนเงินจากบัญชีโดยตรงไปยังผู้รับเหมา</em> และผู้รับเหมาเป็น <em>“ทางผ่าน” ก่อนถอนกลับให้คนใกล้ชิด</em> ข้ออ้างว่าไม่รู้ว่าเงินใช้สร้างพูลวิลลา “รับฟังไม่ขึ้น” ฝั่งผู้รับเหมาอ้างว่าได้รับเงิน <em class="c">ราว 75 ล้านบาท</em> แต่ตำรวจยังไม่เปิดยอดความเสียหาย และยังไม่ออกหมาย</p>
+    <aside class="warn">
+      <h3>อ่านก่อนอ้างอิง</h3>
+      <p>ทุกเส้นในเว็บนี้รวบรวมจากรายงานข่าว ไม่ใช่รายการเดินบัญชีหรือสำนวนคดี ยังไม่มีการแจ้งข้อกล่าวหาอย่างเป็นทางการหรือคำพิพากษา ทุกคนที่ถูกพาดพิงยังได้รับการสันนิษฐานว่าบริสุทธิ์</p>
+      <p>ตัวเลขที่ไม่มีหน่วยงานรัฐยืนยันติดป้ายตามผู้พูดทุกจุด</p>
+    </aside>
+  </div>
+  <div class="stats">
+    <div class="stat rv">
+      <span class="n"><span class="pre">เกือบ</span><span class="cnt" data-to="1000">1,000</span><small>ล้าน</small></span>
+      <span class="w">เงินหมุนเวียนในบัญชี ไล่ย้อนถึงปี 2562</span>
+      <span class="tag t-off">ผบช.ก. 2 พ.ย. · ตัวเลขเบื้องต้น</span>
+    </div>
+    <div class="stat rv">
+      <span class="n"><span class="pre">≈</span><span class="cnt" data-to="75">75</span><small>ล้าน</small></span>
+      <span class="w">เข้าบัญชีบริษัทและบัญชีส่วนตัวของผู้รับเหมาพูลวิลลา</span>
+      <span class="tag t-claim">ทนายกุ้ง / ช่างเอ๋ 3 พ.ย.</span>
+    </div>
+    <div class="stat rv">
+      <span class="n"><span class="cnt" data-to="500000">500,000</span><small>บาท</small></span>
+      <span class="w">เพดานที่ประธานอนุมัติจ่ายได้ต่อครั้ง เกินกว่านี้ต้องมีมติกรรมการ</span>
+      <span class="tag t-off">ข้อบังคับ ข้อ 31</span>
+    </div>
+    <div class="stat rv">
+      <span class="n"><span class="cnt" data-to="0">0</span><small>ฉบับ</small></span>
+      <span class="w">รายงานประชุม รายรับรายจ่าย หรืองบดุล ที่ส่งกระทรวงมหาดไทยตั้งแต่ปี 2565</span>
+      <span class="tag t-flag">มท. 4 พ.ย.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="chap wrap" id="flow-sec" aria-labelledby="h-flow">
+  <div class="chap-h">
+    <div class="no"><b>02</b> / ผังเส้นเงิน</div>
+    <div>
+      <h2 id="h-flow">เงินเข้ามาจากไหน ออกไปทางไหน</h2>
+      <p>ลายเส้นบอกว่าใครเป็นคนพูดถึงเส้นนั้น แตะเส้นใดก็ได้ หรือกดเล่นเพื่อไล่ดูทีละเส้น</p>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="board-top">
+      <div class="filters" role="group" aria-label="กรองตามระดับหลักฐาน">
+        <button class="fbtn" data-f="all" aria-pressed="true">ทุกเส้น</button>
+        <button class="fbtn" data-f="off" aria-pressed="false"><i></i>ตำรวจ / รัฐแถลง</button>
+        <button class="fbtn" data-f="claim" aria-pressed="false"><i></i>คู่กรณีอ้าง</button>
+        <button class="fbtn" data-f="unv" aria-pressed="false"><i></i>ยังไม่ยืนยัน</button>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--dim)">FIG. 01 · MONEY TRAIL</span>
+    </div>
+    <p class="hint-x">เลื่อนผังซ้าย–ขวาเพื่อดูครบทุกปลายทาง</p>
+    <div class="scroller" tabindex="0" aria-label="ผังเส้นทางเงิน เลื่อนดูด้านข้างได้">
+<svg id="flow" viewBox="0 0 1320 680" role="img" aria-label="ผังเส้นทางเงิน: เงินบริจาคจากประชาชนและคนดังเข้าบัญชีชื่อบุคคลและบัญชีมูลนิธิ จากนั้นออกไปยังอาคารมูลนิธิคลอง 8 ผู้รับเหมาพูลวิลลา สามีประธานโดยตรง การใช้จ่ายส่วนตัว การช่วยเหลือสังคม และเงินสดในตู้เซฟ ผู้รับเหมาส่งเงินต่อไปยังโครงการพูลวิลลาและถอนกลับให้สามีประธาน">
+  <defs>
+    <marker id="ah-off" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-off" d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="ah-claim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-claim" d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="ah-unv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-unv" d="M0,0 L10,5 L0,10 z"/></marker>
+    <marker id="ah-neu" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-neu" d="M0,0 L10,5 L0,10 z"/></marker>
+  </defs>
+
+  <text class="col" x="20" y="24">ต้นทาง</text>
+  <text class="col" x="250" y="24">บัญชีรับบริจาค</text>
+  <text class="col" x="720" y="24">ปลายทางชั้นแรก</text>
+  <text class="col" x="1090" y="24">ปลายทางชั้นที่สอง</text>
+
+  <rect class="gate" x="588" y="60" width="12" height="600" rx="3"/>
+  <text class="lbl c-flag" x="594" y="50" text-anchor="middle">ด่านอนุมัติจ่าย</text>
+
+  <rect class="hub" x="250" y="40" width="290" height="470" rx="6"/>
+  <rect class="node key" x="275" y="80" width="240" height="100" rx="4"/>
+  <text class="nt" x="289" y="104">องค์กรทำดี โดย น.ส.ปนัดดา</text>
+  <text class="ns" x="289" y="124">บัญชีชื่อบุคคล · เปิดราวปี 2557</text>
+  <text class="ns" x="289" y="142">มติกรรมการ 25 ก.ค. 2565</text>
+  <text class="ns" x="289" y="160">รับรองเป็นบัญชีของมูลนิธิ</text>
+  <rect class="node key" x="275" y="225" width="240" height="100" rx="4"/>
+  <text class="nt" x="289" y="249">มูลนิธิองค์กรทำดี</text>
+  <text class="ns" x="289" y="269">บัญชีหลัก · เปิดปี 2565</text>
+  <text class="ns" x="289" y="287">จดทะเบียน 30 มี.ค. 2565</text>
+  <text class="ns" x="289" y="305">เลขที่ กท 3275 · ทุน 500,000 บาท</text>
+  <rect class="node dot" x="275" y="365" width="240" height="64" rx="4"/>
+  <text class="nt" x="289" y="389">บัญชีสมทบองค์กรทำดี</text>
+  <text class="ns c-unv" x="289" y="409">มีชื่อในคำเล่าของหนุ่ม กรรชัย</text>
+  <text class="ns" x="275" y="462">ตำรวจไล่บัญชีย้อนหลังถึงปี 2562</text>
+  <text class="ns" x="275" y="482">ธนาคารและเลขบัญชี: ข่าวยังไม่เปิดเผย</text>
+
+  <rect class="ctrl" x="250" y="540" width="290" height="124" rx="5"/>
+  <text class="nt c-flag" x="266" y="564">ด่านควบคุมตามข้อบังคับ</text>
+  <text class="ns" x="266" y="585">ข้อ 31 ประธานอนุมัติได้ ≤ 500,000 บาท/ครั้ง</text>
+  <text class="ns" x="266" y="603">เกินกว่านั้นต้องมีมติกรรมการ</text>
+  <text class="ns" x="266" y="621">ข้อ 34 เช็คต้องลงนามร่วม 2 คน</text>
+  <text class="nsx c-flag" x="266" y="645">รายงานการเงินที่ส่ง มท.: 0 ฉบับ</text>
+  <path class="e-link" d="M540,600 L588,600"/>
+
+  <rect class="node" x="20" y="130" width="180" height="120" rx="4"/>
+  <text class="nt" x="34" y="154">ประชาชนผู้บริจาค</text>
+  <text class="ns" x="34" y="175">โอนตามโพสต์ขอรับบริจาค</text>
+  <text class="ns" x="34" y="193">ทุกยอด ตั้งแต่ 19 บาท</text>
+  <text class="ns" x="34" y="211">โอนเข้าได้ทั้งบัญชีชื่อบุคคล</text>
+  <text class="ns" x="34" y="229">และบัญชีมูลนิธิ</text>
+  <rect class="node" x="20" y="390" width="180" height="100" rx="4"/>
+  <text class="nt" x="34" y="414">คนดัง / รายใหญ่</text>
+  <text class="ns" x="34" y="435">ตำรวจไล่ตรวจกลุ่มนี้ก่อน</text>
+  <text class="ns" x="34" y="453">เช่น หนุ่ม กรรชัย 1 ล้านบาท</text>
+  <text class="ns" x="34" y="471">(18 ก.ย. 2567)</text>
+
+  <rect class="node" x="720" y="40" width="210" height="110" rx="4"/>
+  <text class="nt" x="734" y="64">อาคารมูลนิธิ คลอง 8</text>
+  <text class="ns" x="734" y="85">ลำผักกูด ธัญบุรี ปทุมธานี</text>
+  <text class="ns" x="734" y="103">ศาลเจ้า 1 + อาคารใหญ่ 3 หลัง</text>
+  <text class="ns" x="734" y="121">ยังสร้างไม่เสร็จ</text>
+  <text class="ns" x="734" y="139">ผู้รับเหมา: ช่างเอ็ม</text>
+  <rect class="node key" x="720" y="220" width="210" height="110" rx="4"/>
+  <text class="nt" x="734" y="244">ช่างเอ๋ (ผู้รับเหมา)</text>
+  <text class="ns" x="734" y="265">บัญชีบริษัท + บัญชีส่วนตัว</text>
+  <text class="ns" x="734" y="283">ตำรวจ: เป็น “ทางผ่าน” ของเงิน</text>
+  <text class="ns" x="734" y="301">สถานะพยานหรือผู้ร่วม:</text>
+  <text class="ns" x="734" y="319">รอตำรวจสรุป</text>
+  <rect class="node" x="720" y="470" width="210" height="80" rx="4"/>
+  <text class="nt" x="734" y="494">ช่วยเหลือผู้เดือดร้อน</text>
+  <text class="ns" x="734" y="515">ตามวัตถุประสงค์มูลนิธิ</text>
+  <text class="ns" x="734" y="533">ยังไม่มีข่าวเปิดยอดส่วนนี้</text>
+  <rect class="node" x="720" y="590" width="210" height="70" rx="4"/>
+  <text class="nt" x="734" y="614">เงินสดในตู้เซฟ</text>
+  <text class="ns c-claim" x="734" y="635">บุ๋มอ้างว่าหายไปกว่า 7 ล้าน</text>
+  <text class="ns" x="734" y="651">ข้อ 32 ให้ถือเงินสด ≤ 2 แสน</text>
+
+  <rect class="node" x="1090" y="110" width="210" height="120" rx="4"/>
+  <text class="nt" x="1104" y="134">พูลวิลลา 8 หลัง ภูเก็ต</text>
+  <text class="ns" x="1104" y="155">ต.ไม้ขาว อ.ถลาง</text>
+  <text class="ns" x="1104" y="173">บริษัทจด 6 มิ.ย. 2568</text>
+  <text class="ns" x="1104" y="191">จดเลิก 3 ก.ย. 2569</text>
+  <text class="ns" x="1104" y="209">ประกาศขาย 15–22 ล้าน/หลัง</text>
+  <rect class="node key" x="1090" y="300" width="210" height="110" rx="4"/>
+  <text class="nt" x="1104" y="324">ก๊อต อธิป · คนใกล้ชิด</text>
+  <text class="ns" x="1104" y="345">สามีของประธานมูลนิธิ</text>
+  <text class="ns" x="1104" y="363">ตำรวจ: อาจเข้าข่ายฟอกเงิน</text>
+  <text class="ns" x="1104" y="381">รับหมายเรียกพยาน 4 พ.ย.</text>
+  <text class="ns" x="1104" y="399">(ตามที่ก๊อตโพสต์)</text>
+  <rect class="node key" x="1090" y="470" width="210" height="135" rx="4"/>
+  <text class="nt" x="1104" y="494">ใช้จ่ายส่วนตัว</text>
+  <text class="ns" x="1104" y="515">ผบก.ปอศ. ยืนยันว่ามี</text>
+  <text class="ns" x="1104" y="533">ยังไม่เปิดรายการและยอด</text>
+  <rect class="chip" x="1100" y="545" width="190" height="50" rx="3"/>
+  <text class="nsx c-unv" x="1110" y="566">“800 ล้าน” ยังไม่ยืนยัน</text>
+  <text class="ns c-unv" x="1110" y="584">แหล่งข่าวตำรวจอีกทาง: ไม่ถึง</text>
+
+  <path class="e-own" d="M1140,232 L1140,298"/>
+  <circle cx="1140" cy="232" r="2.5" class="c-dim"/>
+  <circle cx="1140" cy="298" r="2.5" class="c-dim"/>
+  <text class="ns" x="1150" y="260">ถือหุ้นใหญ่บริษัทวิลลา</text>
+  <text class="ns" x="1150" y="276">ช่างเอ๋อ้าง หุ้นส่วน 60:40</text>
+
+  <!-- edges -->
+  <g class="edge lv-off" data-k="1" tabindex="0" role="button" aria-label="เส้น 1 ประชาชนบริจาคเข้า 2 บัญชี">
+    <path class="hit" d="M200,170 C240,170 238,130 273,130"/><path class="hit" d="M200,210 C240,210 238,275 273,275"/>
+    <path id="p1a" class="e e-off" d="M200,170 C240,170 238,130 273,130" marker-end="url(#ah-off)"/>
+    <path id="p1b" class="e e-off" d="M200,210 C240,210 238,275 273,275" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#p1a"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3"><animateMotion dur="2.4s" begin=".7s" repeatCount="indefinite"><mpath href="#p1b"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="232" cy="190" r="9"/><text x="232" y="190">1</text></g>
+  </g>
+  <g class="edge lv-off" data-k="2" tabindex="0" role="button" aria-label="เส้น 2 คนดังและผู้บริจาครายใหญ่">
+    <path class="hit" d="M200,440 L248,440"/>
+    <path id="p2" class="e e-off" d="M200,440 L248,440" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="224" cy="422" r="9"/><text x="224" y="422">2</text></g>
+  </g>
+  <g class="edge lv-unv" data-k="3" tabindex="0" role="button" aria-label="เส้น 3 โอนจากบัญชีมูลนิธิกลับเข้าบัญชีชื่อบุคคล">
+    <path class="hit" d="M395,225 L395,184"/>
+    <path id="p3" class="e e-unv" d="M395,225 L395,184" marker-end="url(#ah-unv)"/>
+    <circle class="pt pt-unv" r="3"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+    <g class="tagc unv"><circle cx="414" cy="204" r="9"/><text x="414" y="204">3</text></g>
+    <text class="lbl c-unv" x="429" y="209">โอนกลับ</text>
+  </g>
+  <g class="edge lv-claim" data-k="4" tabindex="0" role="button" aria-label="เส้น 4 ค่าก่อสร้างอาคารคลอง 8">
+    <path class="hit" d="M540,100 C600,100 640,95 718,95"/>
+    <path id="p4" class="e e-claim" d="M540,100 C600,100 640,95 718,95" marker-end="url(#ah-claim)"/>
+    <circle class="pt pt-claim" r="3"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
+    <g class="tagc claim"><circle cx="624" cy="78" r="9"/><text x="624" y="78">4</text></g>
+    <text class="lbl c-claim" x="638" y="83">ค่าก่อสร้าง</text>
+  </g>
+  <g class="edge lv-off" data-k="5" tabindex="0" role="button" aria-label="เส้น 5 โอนให้ผู้รับเหมาราว 75 ล้าน">
+    <path class="hit" d="M540,262 C610,262 640,275 718,275"/>
+    <path id="p5" class="e e-off" d="M540,262 C610,262 640,275 718,275" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3.4"><animateMotion dur="1.9s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3.4"><animateMotion dur="1.9s" begin=".63s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3.4"><animateMotion dur="1.9s" begin="1.26s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="624" cy="248" r="9"/><text x="624" y="248">5</text></g>
+    <text class="lbl c-off" x="638" y="253">≈75 ล้าน</text>
+  </g>
+  <g class="edge lv-off" data-k="8" tabindex="0" role="button" aria-label="เส้น 8 โอนให้สามีโดยตรง">
+    <path class="hit" d="M540,300 C610,300 630,398 700,398 L1010,398 C1050,398 1050,385 1088,385"/>
+    <path id="p8" class="e e-off" d="M540,300 C610,300 630,398 700,398 L1010,398 C1050,398 1050,385 1088,385" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3"><animateMotion dur="4.4s" repeatCount="indefinite"><mpath href="#p8"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3"><animateMotion dur="4.4s" begin="2.2s" repeatCount="indefinite"><mpath href="#p8"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="742" cy="383" r="9"/><text x="742" y="383">8</text></g>
+    <text class="lbl c-off" x="756" y="388">โอนจากบุ๋มถึงสามีโดยตรง</text>
+  </g>
+  <g class="edge lv-off" data-k="9" tabindex="0" role="button" aria-label="เส้น 9 ใช้จ่ายส่วนตัว">
+    <path class="hit" d="M540,330 C610,330 630,440 700,440 L1010,440 C1050,440 1050,520 1088,520"/>
+    <path id="p9" class="e e-off" d="M540,330 C610,330 630,440 700,440 L1010,440 C1050,440 1050,520 1088,520" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3"><animateMotion dur="4.8s" begin="1s" repeatCount="indefinite"><mpath href="#p9"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3"><animateMotion dur="4.8s" begin="3.4s" repeatCount="indefinite"><mpath href="#p9"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="742" cy="425" r="9"/><text x="742" y="425">9</text></g>
+    <text class="lbl c-off" x="756" y="430">นำไปใช้ส่วนตัว (ตำรวจยืนยัน ไม่เปิดยอด)</text>
+  </g>
+  <g class="edge lv-neu" data-k="10" tabindex="0" role="button" aria-label="เส้น 10 ช่วยเหลือสังคม">
+    <path class="hit" d="M540,480 C610,480 640,510 718,510"/>
+    <path id="p10" class="e e-neu" d="M540,480 C610,480 640,510 718,510" marker-end="url(#ah-neu)"/>
+    <circle class="pt pt-neu" r="2.6"><animateMotion dur="3.6s" repeatCount="indefinite"><mpath href="#p10"/></animateMotion></circle>
+    <g class="tagc neu"><circle cx="626" cy="474" r="9"/><text x="626" y="474">10</text></g>
+    <text class="lbl c-dim" x="641" y="479">ช่วยเหลือ</text>
+  </g>
+  <g class="edge lv-claim" data-k="11" tabindex="0" role="button" aria-label="เส้น 11 เงินสดในตู้เซฟ">
+    <path class="hit" d="M540,500 C620,500 640,625 718,625"/>
+    <path id="p11" class="e e-claim" d="M540,500 C620,500 640,625 718,625" marker-end="url(#ah-claim)"/>
+    <circle class="pt pt-claim" r="3"><animateMotion dur="2.8s" begin=".5s" repeatCount="indefinite"><mpath href="#p11"/></animateMotion></circle>
+    <g class="tagc claim"><circle cx="630" cy="562" r="9"/><text x="630" y="562">11</text></g>
+    <text class="lbl c-claim" x="645" y="560">เงินสด</text>
+  </g>
+  <g class="edge lv-claim" data-k="6" tabindex="0" role="button" aria-label="เส้น 6 ผู้รับเหมาใช้สร้างพูลวิลลา">
+    <path class="hit" d="M930,245 L1015,245 C1055,245 1055,170 1088,170"/>
+    <path id="p6" class="e e-claim" d="M930,245 L1015,245 C1055,245 1055,170 1088,170" marker-end="url(#ah-claim)"/>
+    <circle class="pt pt-claim" r="3"><animateMotion dur="2.4s" begin=".9s" repeatCount="indefinite"><mpath href="#p6"/></animateMotion></circle>
+    <g class="tagc claim"><circle cx="946" cy="228" r="9"/><text x="946" y="228">6</text></g>
+    <text class="lbl c-claim" x="960" y="233">สร้างวิลลา</text>
+  </g>
+  <g class="edge lv-off" data-k="7" tabindex="0" role="button" aria-label="เส้น 7 ผู้รับเหมาถอนกลับให้สามีและคนใกล้ชิด">
+    <path class="hit" d="M930,300 L1015,300 C1055,300 1055,345 1088,345"/>
+    <path id="p7" class="e e-off" d="M930,300 L1015,300 C1055,300 1055,345 1088,345" marker-end="url(#ah-off)"/>
+    <circle class="pt pt-off" r="3.4"><animateMotion dur="2.1s" begin="1.2s" repeatCount="indefinite"><mpath href="#p7"/></animateMotion></circle>
+    <circle class="pt pt-off" r="3.4"><animateMotion dur="2.1s" begin="2.25s" repeatCount="indefinite"><mpath href="#p7"/></animateMotion></circle>
+    <g class="tagc off"><circle cx="946" cy="283" r="9"/><text x="946" y="283">7</text></g>
+    <text class="lbl c-off" x="960" y="288">ถอนกลับ</text>
+  </g>
+  <g class="flag"><circle cx="594" cy="263" r="8"/><text x="594" y="263">!</text></g>
+</svg>
+    </div>
+    <div class="subtitle" aria-live="polite">
+      <div class="idx mono" id="subIdx"><b>—</b> / 11</div>
+      <div class="txt" id="subTxt">
+        <span class="ttl">เลือกเส้นในผัง หรือกดเล่นเพื่อไล่ดูทีละเส้น</span>
+        <span>เส้นที่ตำรวจแถลงชัดที่สุดคือวงจรผู้รับเหมา เงินออกไปที่ผู้รับเหมา ผู้รับเหมาถอนกลับให้สามีของประธาน และสามีถือหุ้นใหญ่ในบริษัทเจ้าของโครงการวิลลาที่ผู้รับเหมาสร้าง</span>
+      </div>
+      <div class="ctrls">
+        <button class="ibtn" id="prevBtn" aria-label="เส้นก่อนหน้า">←</button>
+        <button class="ibtn" id="playBtn" aria-label="เล่นไล่ทีละเส้น"><svg viewBox="0 0 14 14" id="playIco"><path d="M3 1.5v11l9-5.5z"/></svg></button>
+        <button class="ibtn" id="nextBtn" aria-label="เส้นถัดไป">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <span class="tag t-off">ตำรวจ / หน่วยงานรัฐแถลง</span>
+    <span class="tag t-claim">คู่กรณีหรือมูลนิธิอ้าง</span>
+    <span class="tag t-unv">เล่าต่อ / ยังไม่ยืนยัน</span>
+    <span class="tag t-neu">ไม่มีตัวเลขเปิดเผย</span>
+    <span><span class="fl">!</span>จุดที่ข่าวชี้ว่าการอนุมัติจ่ายมีข้อสงสัย</span>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="chap wrap" id="exhibits" aria-labelledby="h-ex">
+  <div class="chap-h">
+    <div class="no"><b>03</b> / หลักฐานทีละเส้น</div>
+    <div><h2 id="h-ex">ใครพูดอะไร เกี่ยวกับเงินแต่ละเส้น</h2><p>หมายเลขตรงกับเส้นในผัง แต่ละข้อระบุผู้พูดไว้ท้ายประโยค</p></div>
+  </div>
+  <div class="exhibits">
+    <article class="ex rv" id="ex-1">
+      <div class="head"><span class="num">เส้น 01</span><span class="tag t-off">ทางการ</span></div>
+      <h3>ประชาชน → บัญชีชื่อบุคคล และบัญชีมูลนิธิ</h3>
+      <ul>
+        <li>มูลนิธิแถลงว่ารับบริจาคผ่าน 2 บัญชี บัญชีแรก “องค์กรทำดี โดย น.ส.ปนัดดา วงศ์ผู้ดี” เปิดราวปี 2557 ด้วยเงินส่วนตัวตั้งแต่ยังเป็นกลุ่มจิตอาสา และยังมีผู้บริจาคโอนเข้าบัญชีนี้ต่อเนื่อง <span class="who">มูลนิธิ 28 ต.ค.</span></li>
+        <li>มูลนิธิอ้างมติกรรมการ 25 ก.ค. 2565 ที่รับรองว่าเงินในบัญชีแรก <q>เป็นเงินรับเข้ามูลนิธิฯ ทั้งหมด ไม่มีการใช้สอยเป็นการส่วนตัว</q> <span class="who">มูลนิธิ</span></li>
+        <li>ผบช.ก. ระบุว่าไล่ตรวจบัญชีย้อนถึงปี 2562 พบเงินหมุนเวียนตั้งแต่หลักร้อยล้านถึงเกือบ 1,000 ล้านบาท <span class="who">ตำรวจ 2 พ.ย.</span></li>
+      </ul>
+      <div class="src"><a href="https://www.thairath.co.th/entertain/news/2968953" target="_blank" rel="noopener">ไทยรัฐ 28.10</a><a href="https://www.bangkokbiznews.com/news/1258313" target="_blank" rel="noopener">กรุงเทพธุรกิจ 28.10</a><a href="https://www.siamnews.com/news/crime/56516" target="_blank" rel="noopener">สยามนิวส์ 02.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-2">
+      <div class="head"><span class="num">เส้น 02</span><span class="tag t-off">ทางการ</span></div>
+      <h3>คนดังและผู้บริจาครายใหญ่ → บัญชีรับบริจาค</h3>
+      <ul>
+        <li>ผบช.ก. ระบุว่าเริ่มไล่เส้นเงินจากกลุ่มผู้บริจาครายใหญ่ก่อน แต่รับฟังผู้บริจาคทุกยอด แม้แต่ 19 บาท <span class="who">ตำรวจ 4 พ.ย.</span></li>
+        <li>หนุ่ม กรรชัย ให้ปากคำว่าโอน 1,000,000 บาท เมื่อ 18 ก.ย. 2567 เพื่อช่วยน้ำท่วมเชียงราย <span class="who">ผู้บริจาค</span></li>
+        <li>ชมพู่ อารยา เข้าให้ข้อมูลกับตำรวจเรื่องเงินบริจาคช่วงน้ำท่วม โดยไม่เปิดยอด <span class="who">Thai PBS</span></li>
+      </ul>
+      <div class="src"><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286481" target="_blank" rel="noopener">PPTV 04.11</a><a href="https://www.amarintv.com/news/entertain/561950" target="_blank" rel="noopener">อมรินทร์ 04.11</a><a href="https://www.thaipbs.or.th/news/content/572130" target="_blank" rel="noopener">Thai PBS 04.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-3">
+      <div class="head"><span class="num">เส้น 03</span><span class="tag t-unv">ยังไม่ยืนยัน</span></div>
+      <h3>บัญชีมูลนิธิ → บัญชีชื่อบุคคล → “ผู้ชายคนใกล้ตัว”</h3>
+      <ul>
+        <li>หนุ่ม กรรชัย เล่าว่าตำรวจให้ดูผังเส้นเงินที่ <q>ยุ่งเหยิงซับซ้อนคล้ายเส้นทางบินหรือใยแมงมุม</q> เห็นเงินจากบัญชีมูลนิธิโอนกลับเข้าบัญชี “องค์กรทำดี โดย บุ๋ม ปนัดดา” แล้วโอนต่อไปยังผู้ชายคนหนึ่งที่เป็นคนใกล้ตัว <span class="who">หนุ่ม กรรชัย</span></li>
+        <li>เขาอ้างว่ามีบัญชีที่ 3 ชื่อ “บัญชีสมทบองค์กรทำดี” และมีธุรกรรมขาเข้ากว่า 1.8 ล้านครั้ง จากราว 9 แสนบัญชี <span class="who">หนุ่ม กรรชัย</span></li>
+        <li>ตำรวจยังไม่แถลงตัวเลขชุดนี้เอง</li>
+      </ul>
+      <div class="src"><a href="https://www.amarintv.com/news/entertain/561950" target="_blank" rel="noopener">อมรินทร์ 04.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-4">
+      <div class="head"><span class="num">เส้น 04</span><span class="tag t-claim">คู่กรณีอ้าง</span></div>
+      <h3>บัญชี → อาคารมูลนิธิ คลอง 8 ปทุมธานี</h3>
+      <ul>
+        <li>บุ๋มชี้แจงว่าเงินที่โอนให้บริษัทผู้รับเหมาใช้สร้างศูนย์ช่วยเหลือประชาชนและศูนย์พักพิงของมูลนิธิ และโฉนดโอนเป็นชื่อมูลนิธิแล้ว <span class="who">บุ๋ม</span></li>
+        <li>นักข่าว Thai PBS พบ 4 อาคาร (ศาลเจ้า 1 อาคารใหญ่ 3) ยังสร้างไม่เสร็จ บนที่ดิน 2 ไร่ 300 ตร.ว. ชาวบ้านบอกเริ่มสร้างราว 3 ปีก่อน <span class="who">Thai PBS</span></li>
+        <li>ตำรวจเรียกผู้รับเหมาอาคารนี้ (ช่างเอ็ม) มาสอบ 4 พ.ย. จะดูว่ามีสัญญาหรือไม่ และจ่ายสูงกว่ามูลค่างานจริงหรือไม่ <span class="who">ตำรวจ 4 พ.ย.</span></li>
+      </ul>
+      <div class="src"><a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS 30.10</a><a href="https://www.thaipbs.or.th/news/content/572146" target="_blank" rel="noopener">Thai PBS 04.11</a><a href="https://www.dailynews.co.th/news/6330260/" target="_blank" rel="noopener">เดลินิวส์ 04.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-5">
+      <div class="head"><span class="num">เส้น 05</span><span class="tag t-off">ทางการ</span><span class="tag t-claim">ยอดเงิน: คู่กรณีอ้าง</span></div>
+      <h3>บัญชี → ช่างเอ๋ (บัญชีบริษัทและบัญชีส่วนตัว)</h3>
+      <ul>
+        <li>บก.ปอศ. แถลงว่าบุ๋ม <q>โอนเงินจากบัญชีโดยตรงไปยังผู้รับเหมาก่อสร้าง</q> และข้ออ้างว่าไม่รู้ว่าเงินใช้สร้างพูลวิลลา <q>รับฟังไม่ขึ้น</q> <span class="who">ตำรวจ 3 พ.ย.</span></li>
+        <li>ยอดเงินขยับตามผู้พูด: ช่างเอ๋เคยพูด 45 ล้าน (29 ต.ค.) ต่อมาทนายกุ้งระบุราว 75 ล้าน คือเงินโอนราว 63 ล้าน กับเงินสดราว 12 ล้าน <span class="who">ฝั่งช่างเอ๋ 3 พ.ย.</span></li>
+        <li>Thai PBS รายงานว่าเงินสด 12 ล้านมีชื่อผู้ฝากเป็น น.ส.ปนัดดา และเงิน 63 ล้านมาจากบัญชีมูลนิธิและบุคคล ขณะที่ไทยรัฐเขียนว่ามาจากมูลนิธิ <span class="who">สื่อรายงานไม่ตรงกัน</span></li>
+        <li>บุ๋มยอมรับว่าโอนเอง แต่ยืนยันว่าโอนเข้าบัญชีบริษัทผู้รับเหมาเพื่อสร้างอาคารมูลนิธิ <span class="who">บุ๋ม 29 ต.ค.</span></li>
+      </ul>
+      <div class="src"><a href="https://www.matichon.co.th/local/news_5959769" target="_blank" rel="noopener">มติชน 03.11</a><a href="https://thestandard.co/police-evidence-boom-panadda-donation-fraud/" target="_blank" rel="noopener">THE STANDARD 03.11</a><a href="https://www.thairath.co.th/news/crime/2970256" target="_blank" rel="noopener">ไทยรัฐ 03.11</a><a href="https://www.thaipbs.or.th/news/content/572130" target="_blank" rel="noopener">Thai PBS 04.11</a><a href="https://thestandard.co/boom-panadda-good-deed-foundation-investigation/" target="_blank" rel="noopener">THE STANDARD 30.10</a></div>
+    </article>
+    <article class="ex rv" id="ex-6">
+      <div class="head"><span class="num">เส้น 06</span><span class="tag t-claim">คู่กรณีอ้าง</span></div>
+      <h3>ช่างเอ๋ → โครงการพูลวิลลา 8 หลัง ภูเก็ต</h3>
+      <ul>
+        <li>ช่างเอ๋เล่าว่าโครงการเริ่มจากบ้านพักตากอากาศ แล้วเปลี่ยนเป็นพูลวิลลา 8 หลังที่ ต.ไม้ขาว อ.ถลาง เป็นหุ้นส่วนกับก๊อต 60:40 (ก๊อต 60) และอ้างว่าก๊อตยังค้างค่าก่อสร้าง 1.2 ล้านบาท <span class="who">ช่างเอ๋</span></li>
+        <li>ข้อมูลกรมพัฒนาธุรกิจการค้าที่ Thai PBS อ้าง: บริษัทเจ้าของโครงการจดทะเบียน 6 มิ.ย. 2568 ทุน 5 ล้านบาท ก๊อตถือหุ้นใหญ่ จดเลิก 3 ก.ย. 2569 งบปี 2568 ขาดทุนราว 3 หมื่นบาท <span class="who">Thai PBS</span></li>
+        <li>วิลลาประกาศขายหลังละ 15–22 ล้านบาท อบต.ไม้ขาวกำลังตรวจใบอนุญาตก่อสร้าง <span class="who">Thai PBS</span></li>
+      </ul>
+      <div class="src"><a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS 30.10</a><a href="https://mgronline.com/crime/detail/9690000105568" target="_blank" rel="noopener">ผู้จัดการ 03.11</a><a href="https://www.thairath.co.th/news/crime/2970256" target="_blank" rel="noopener">ไทยรัฐ 03.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-7">
+      <div class="head"><span class="num">เส้น 07</span><span class="tag t-off">ทางการ</span></div>
+      <h3>ช่างเอ๋ → ก๊อต และคนใกล้ชิด</h3>
+      <ul>
+        <li>บก.ปอศ. ระบุว่าช่างเอ๋ <q>เป็นทางผ่านในการรับโอนเงินก่อนถอนกลับไปให้บุคคลใกล้ชิด</q> และกำลังพิจารณาว่าเป็นตัวการร่วมหรือพยาน <span class="who">ตำรวจ 3 พ.ย.</span></li>
+        <li>ช่างเอ๋เล่าว่าได้เงิน 2 ก้อน ก้อนแรกใช้ก่อสร้าง ก้อนที่สองก๊อตสั่งให้โอนต่อเข้าบัญชีส่วนตัวของก๊อต โดยเขาไม่ได้ถามว่าเอาไปทำอะไร <span class="who">ช่างเอ๋</span></li>
+        <li>ตัวอย่างที่ Thai PBS รายงาน: 23 ธ.ค. 2568 เวลา 21.00 น. ผู้รับเหมาโอน 1.9 ล้าน และ 1.8 ล้าน ให้สามีบุ๋ม <span class="who">Thai PBS</span></li>
+      </ul>
+      <div class="src"><a href="https://thestandard.co/police-evidence-boom-panadda-donation-fraud/" target="_blank" rel="noopener">THE STANDARD 03.11</a><a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS 30.10</a></div>
+    </article>
+    <article class="ex rv" id="ex-8">
+      <div class="head"><span class="num">เส้น 08</span><span class="tag t-off">ทางการ</span></div>
+      <h3>บุ๋ม → ก๊อต โดยตรง</h3>
+      <ul>
+        <li>บก.ปอศ. ระบุว่ายังไม่พบว่าก๊อตมีส่วนร่วมในการเปิดรับบริจาค แต่ <q>พบเส้นทางการเงินจำนวนมากที่รับโอนมาจาก</q> บุ๋ม จึงอาจถูกพิจารณาดำเนินคดีฐานฟอกเงิน <span class="who">ตำรวจ 3 พ.ย.</span></li>
+        <li>ก๊อตโพสต์ว่าเข้ารับหมายเรียกพยานบุคคลด้วยตนเองที่ สภ.บ้านนา จ.นครนายก และยื่นหนังสือแสดงเจตนาสุจริต <span class="who">ก๊อต 4 พ.ย.</span></li>
+      </ul>
+      <div class="src"><a href="https://thestandard.co/police-evidence-boom-panadda-donation-fraud/" target="_blank" rel="noopener">THE STANDARD 03.11</a><a href="https://www.dailynews.co.th/news/6331074/" target="_blank" rel="noopener">เดลินิวส์ 04.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-9">
+      <div class="head"><span class="num">เส้น 09</span><span class="tag t-off">ทางการ</span><span class="tag t-unv">800 ล้าน: ยังไม่ยืนยัน</span></div>
+      <h3>บัญชี → ใช้จ่ายส่วนตัว</h3>
+      <ul>
+        <li>ผบก.ปอศ. (พล.ต.ต.ทัศน์ภูมิ จารุปรัชญ์) ยืนยันว่ามีการนำเงินบริจาคไปใช้จ่ายส่วนตัว และการกระทำซ้ำ ๆ <q>จะอ้างว่าไม่รู้ย่อมเป็นไปไม่ได้</q> แต่ยังไม่เปิดรายการหรือยอด <span class="who">ตำรวจ 4 พ.ย.</span></li>
+        <li>ตัวเลข 800 ล้านมาจากอั๋น ภูวนาท ที่เล่าต่อจากหนุ่ม กรรชัย ว่าเป็น <q>เงินที่เบิกไปจากบัญชี</q> <span class="who">เล่าต่อ</span></li>
+        <li>สรยุทธอ้างแหล่งข่าวตำรวจว่า <q>ตัวเลขไม่ถึง 800 ล้านบาท</q> ส่วน ปอศ. ตอบว่า <q>ยังไม่มีข้อมูลประเด็นนี้</q> <span class="who">4 พ.ย.</span></li>
+        <li>หนุ่ม กรรชัย อ้างว่าตำรวจมีหลักฐานการซื้อสินค้าแบรนด์เนมและการเดินทาง <span class="who">หนุ่ม กรรชัย</span></li>
+      </ul>
+      <div class="src"><a href="https://www.thaipbs.or.th/news/content/572146" target="_blank" rel="noopener">Thai PBS 04.11</a><a href="https://www.matichon.co.th/local/news_5960539" target="_blank" rel="noopener">มติชน 04.11</a><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286451" target="_blank" rel="noopener">PPTV 04.11</a><a href="https://www.amarintv.com/news/entertain/561950" target="_blank" rel="noopener">อมรินทร์ 04.11</a></div>
+    </article>
+    <article class="ex rv" id="ex-10">
+      <div class="head"><span class="num">เส้น 10</span><span class="tag t-neu">ไม่มีตัวเลข</span></div>
+      <h3>บัญชี → ช่วยเหลือสังคมตามวัตถุประสงค์</h3>
+      <ul>
+        <li>วัตถุประสงค์ตามข้อบังคับ: ช่วยผู้ยากไร้และผู้ประสบภัย ช่วยโรงเรียนและโรงพยาบาลที่ขาดอุปกรณ์ สนับสนุนองค์กรการกุศล และไม่เกี่ยวข้องการเมือง</li>
+        <li>มูลนิธิประกาศหยุดรับบริจาคทุกช่องทาง แต่ยังช่วยเหลือสังคมต่อตามกำลัง ยังไม่มีข่าวเปิดยอดเงินที่ใช้ในส่วนนี้ <span class="who">มูลนิธิ 29 ต.ค.</span></li>
+      </ul>
+      <div class="src"><a href="https://www.thaipbs.or.th/news/content/571921" target="_blank" rel="noopener">Thai PBS 30.10</a><a href="https://www.thairath.co.th/scoop/theissue/2969191" target="_blank" rel="noopener">ไทยรัฐ 29.10</a></div>
+    </article>
+    <article class="ex rv" id="ex-11">
+      <div class="head"><span class="num">เส้น 11</span><span class="tag t-claim">คู่กรณีอ้าง</span></div>
+      <h3>เงินสดในตู้เซฟ</h3>
+      <ul>
+        <li>บุ๋มอ้างว่าเงินสดในตู้เซฟหายไปกว่า 7 ล้านบาท ข่าวไม่ระบุว่าเธอกล่าวหาใคร <span class="who">บุ๋ม</span></li>
+        <li>ข้อบังคับข้อ 32 ให้เหรัญญิกถือเงินสดได้ครั้งละไม่เกิน 200,000 บาท และข้อ 33 ให้ฝากเงินกับธนาคารหรือสถาบันการเงินที่รัฐค้ำประกัน</li>
+      </ul>
+      <div class="src"><a href="https://thestandard.co/boom-panadda-good-deed-foundation-investigation/" target="_blank" rel="noopener">THE STANDARD 30.10</a><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286199" target="_blank" rel="noopener">PPTV 30.10</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="chap wrap" id="ledger" aria-labelledby="h-ledger">
+  <div class="chap-h">
+    <div class="no"><b>04</b> / สมุดบัญชี</div>
+    <div><h2 id="h-ledger">รายการตัวอย่าง และด่านควบคุมที่ข่าวชี้ว่ามีช่องโหว่</h2></div>
+  </div>
+  <div class="ledger">
+    <div class="paper rv" role="figure" aria-label="รายการโอนตัวอย่าง 23 ธันวาคม 2568 ตามที่ Thai PBS รายงาน">
+      <div class="ph"><b>STATEMENT · EXCERPT</b><span class="th">รายการที่ Thai PBS รายงาน</span></div>
+      <div class="meta"><span class="th">ธนาคาร</span><span><span class="rd">ไม่เปิดเผย</span></span></div>
+      <div class="meta"><span class="th">วันที่</span><span>23.12.2568</span></div>
+      <table>
+        <tr><td class="t">16:47</td><td class="th">บัญชีมูลนิธิ → บริษัทผู้รับเหมา</td><td class="a">3,600,000.00</td></tr>
+        <tr><td class="t">16:57</td><td class="th">โอนอีกรายการ วันเดียวกัน</td><td class="a">13,700,000.00</td></tr>
+        <tr class="ret"><td class="t">21:00</td><td class="th">ผู้รับเหมา → สามีบุ๋ม</td><td class="a">1,900,000.00</td></tr>
+        <tr class="ret"><td class="t">ต่อมา</td><td class="th">ผู้รับเหมา → สามีบุ๋ม</td><td class="a">1,800,000.00</td></tr>
+      </table>
+      <div class="tot"><span class="th">รวมเฉพาะที่แสดง</span><span>21,000,000.00</span></div>
+      <p class="fn">Thai PBS ระบุว่ามีทั้งหมด 6 รายการใน 2 วัน รวมราว 45 ล้าน แต่แสดงเพียง 4 รายการข้างต้น และระบุว่าบางรายการแบ่งโอนเป็นยอดต่ำกว่า 2 ล้านบาท · <a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS 30 ต.ค.</a></p>
+    </div>
+    <div class="controls">
+      <div class="crow rv"><div class="rule">บัญชีรับบริจาค<span>เงินของมูลนิธิควรอยู่ในบัญชีที่แยกจากบุคคล</span></div><div class="seen">ใช้บัญชีชื่อ “องค์กรทำดี โดย น.ส.ปนัดดา” ที่เปิดก่อนจดทะเบียน คู่กับบัญชีมูลนิธิ มีมติกรรมการรับรองย้อนหลังเมื่อ 25 ก.ค. 2565 <span class="who">มูลนิธิแถลง</span></div></div>
+      <div class="crow bad rv"><div class="rule">ข้อ 31 วงเงินอนุมัติ<span>ประธาน ≤ 500,000 บาท/ครั้ง เกินกว่านั้นต้องมีมติเสียงข้างมาก เว้นกรณีเร่งด่วนให้รายงานในการประชุมครั้งถัดไป</span></div><div class="seen">รายการตัวอย่างโอนครั้งละ 3.6 และ 13.7 ล้านบาท ตำรวจกำลังตรวจอำนาจอนุมัติของประธานและว่ามีมติกรรมการหรือไม่ <span class="who">Thai PBS · THE STANDARD</span></div></div>
+      <div class="crow bad rv"><div class="rule">การรับรู้ของกรรมการ<span>ข้อ 34 เช็คต้องลงนามประธานร่วมกับเลขาฯ หรือเหรัญญิก</span></div><div class="seen">ตำรวจยกตัวอย่างการโอนช่วง 02.00 น. โดยกรรมการไม่รับรู้ ไม่ระบุว่าเป็นรายการใด <span class="who">PPTV 4 พ.ย.</span></div></div>
+      <div class="crow bad rv"><div class="rule">รายงานต่อนายทะเบียน<span>รายงานประชุม รายรับรายจ่าย งบดุลประจำปี</span></div><div class="seen">ไม่เคยส่งเอกสารใดเลยตั้งแต่จดทะเบียนปี 2565 กระทรวงให้ส่งภายใน 10 พ.ย. ไม่เช่นนั้นจะร้องศาล <span class="who">มท. 4 พ.ย.</span></div></div>
+      <div class="crow rv"><div class="rule">สถานะภาษี<span>องค์กรสาธารณกุศลตามประกาศกระทรวงการคลัง</span></div><div class="seen">ไม่ได้ยื่นขอเป็นองค์กรสาธารณกุศล ผู้บริจาคนำไปลดหย่อนภาษีไม่ได้ มูลนิธิเสียภาษีเงินได้นิติบุคคลจากรายรับ <span class="who">กรมสรรพากร 30 ต.ค.</span></div></div>
+      <div class="crow rv"><div class="rule">ทรัพย์สินเมื่อเลิกมูลนิธิ<span>ข้อ 39</span></div><div class="seen">ทรัพย์สินที่เหลือทั้งหมดตกเป็นของสภากาชาดไทย <span class="who">ข้อบังคับ</span></div></div>
+      <div class="src" style="margin-top:14px"><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286199" target="_blank" rel="noopener">PPTV 30.10 (ข้อบังคับ)</a><a href="https://thestandard.co/cib-probes-good-deed-foundation-finances/" target="_blank" rel="noopener">THE STANDARD 02.11</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1716673/" target="_blank" rel="noopener">Bangkok Insight 04.11</a><a href="https://www.thansettakij.com/economy/672631" target="_blank" rel="noopener">ฐานเศรษฐกิจ 30.10</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="chap wrap" id="people" aria-labelledby="h-people">
+  <div class="chap-h">
+    <div class="no"><b>05</b> / บุคคลและหน่วยงาน</div>
+    <div><h2 id="h-people">ใครอยู่ตรงไหนในคดี ณ 4 พ.ย.</h2><p>คดีหลักเกิดจากที่ออยศรี (เจ้าของเพจ ออยศรีและผองเผือก) ร้องทุกข์ต่อ บช.ก. เมื่อ 30 ต.ค. ตำรวจยังไม่ออกหมายเรียกผู้ต้องหาหรือหมายจับ ผบช.ก. ขอเวลาอีก 1–2 วัน</p></div>
+  </div>
+  <div class="charges"><span class="lab">ข้อหาที่พิจารณา</span><span>ร่วมกันฉ้อโกงประชาชน</span><span>พ.ร.บ.คอมพิวเตอร์ (นำเข้าข้อมูลอันเป็นเท็จ)</span><span>ร่วมกันฟอกเงิน</span></div>
+  <div class="dossiers">
+    <article class="dos rv">
+      <div class="top"><div class="ini" aria-hidden="true">บ</div><div><h3>บุ๋ม ปนัดดา</h3><div class="role">ประธานมูลนิธิ · ยุติหน้าที่ชั่วคราว 29 ต.ค.</div></div></div>
+      <div class="pv"><span class="tag t-off">ตำรวจ</span><span>พฤติการณ์เข้าข่ายตัวการร่วม ข้ออ้างว่าไม่รู้เห็นเรื่องพูลวิลลา “รับฟังไม่ขึ้น”</span></div>
+      <div class="pv"><span class="tag t-claim">ฝั่งบุ๋ม</span><span>ผิดที่ไว้ใจคนใกล้ตัว แจ้งความก๊อตและผู้รับเหมาที่กองปราบฯ 3 พ.ย. ขอโทษสังคม และพร้อมนำทรัพย์สินส่วนตัวชดใช้ส่วนที่ขาด</span></div>
+    </article>
+    <article class="dos rv">
+      <div class="top"><div class="ini" aria-hidden="true">ก</div><div><h3>ก๊อต อธิป</h3><div class="role">สามีประธาน · ผู้ถือหุ้นใหญ่บริษัทพูลวิลลา</div></div></div>
+      <div class="pv"><span class="tag t-off">ตำรวจ</span><span>ยังไม่พบว่าร่วมเปิดรับบริจาค แต่รับโอนเงินจำนวนมากจากบุ๋ม อาจถูกพิจารณาฐานฟอกเงิน</span></div>
+      <div class="pv"><span class="tag t-claim">ฝั่งก๊อต</span><span>รับหมายเรียกพยานด้วยตนเอง ยื่นหนังสือแสดงเจตนาสุจริต พร้อมให้ความร่วมมือ</span></div>
+    </article>
+    <article class="dos rv">
+      <div class="top"><div class="ini" aria-hidden="true">อ</div><div><h3>ช่างเอ๋</h3><div class="role">ผู้รับเหมาโครงการพูลวิลลา ภูเก็ต</div></div></div>
+      <div class="pv"><span class="tag t-off">ตำรวจ</span><span>เป็นทางผ่านของเงิน กำลังพิจารณาว่าเป็นตัวการร่วมหรือพยาน ให้ปากคำแล้วคืน 3 พ.ย.</span></div>
+      <div class="pv"><span class="tag t-claim">ฝั่งช่างเอ๋</span><span>ไม่ได้สมรู้ร่วมคิด โอนเงินตามที่ก๊อตสั่ง และขอโทษบุ๋มกับก๊อต</span></div>
+    </article>
+  </div>
+  <p class="ag-h">หน่วยงานที่เกี่ยวข้อง</p>
+  <div class="agencies">
+    <div class="ag rv"><b>บก.ปอศ. / บช.ก.</b><span>คดีมูลนิธิ ตรวจบัญชี การใช้เงินตามวัตถุประสงค์ และเอกสารการจ่าย</span><span class="st hot">คาดชัดเจนภายใน 9 พ.ย.</span></div>
+    <div class="ag rv"><b>กองบังคับการปราบปราม</b><span>คดีที่บุ๋มแจ้งความก๊อตและผู้รับเหมา ตำรวจแยกจากคดีมูลนิธิ</span><span class="st">รับแจ้งความ 3 พ.ย.</span></div>
+    <div class="ag rv"><b>กรมการปกครอง / มท.</b><span>นายทะเบียนมูลนิธิ ร้องศาลถอดถอนกรรมการ (ป.พ.พ. ม.129) หรือสั่งเลิกมูลนิธิ (ม.131) ได้</span><span class="st hot">เส้นตายส่งเอกสาร 10 พ.ย.</span></div>
+    <div class="ag rv"><b>กรมสรรพากร</b><span>ภาษีเงินได้นิติบุคคลและบัญชี</span><span class="st">มีรายงานว่าลงตรวจภาษีแล้ว</span></div>
+    <div class="ag rv"><b>ปปง.</b><span>เส้นทางทรัพย์สิน เข้าได้เมื่อมีความผิดมูลฐาน สนธิญา สวัสดี ยื่นให้สอบและอายัดทรัพย์ 2 พ.ย.</span><span class="st">ยังไม่ยืนยันเปิดสอบอย่างเป็นทางการ</span></div>
+    <div class="ag rv"><b>ท้องถิ่นและป่าไม้</b><span>อบต.ไม้ขาวตรวจใบอนุญาตก่อสร้างวิลลา ป่าไม้และกรมการปกครองตรวจที่ดินนครนายกที่โยงกับก๊อต (อยู่นอกผังเงิน)</span><span class="st">อยู่ระหว่างตรวจ</span></div>
+  </div>
+  <div class="src" style="margin-top:18px"><a href="https://thestandard.co/investigation-boom-panadda-good-deed-foundation/" target="_blank" rel="noopener">THE STANDARD 02.11</a><a href="https://mgronline.com/crime/detail/9690000105701" target="_blank" rel="noopener">ผู้จัดการ 04.11</a><a href="https://www.bangkokbiznews.com/politics/1258602" target="_blank" rel="noopener">กรุงเทพธุรกิจ 30.10</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1715706/" target="_blank" rel="noopener">Bangkok Insight 02.11</a><a href="https://thairath.co.th/news/crime/2970061" target="_blank" rel="noopener">ไทยรัฐ 03.11</a><a href="https://www.dailynews.co.th/news/6327203/" target="_blank" rel="noopener">เดลินิวส์ 03.11</a><a href="https://mgronline.com/crime/detail/9690000105568" target="_blank" rel="noopener">ผู้จัดการ 03.11</a></div>
+</section>
+
+<!-- 06 -->
+<section class="chap wrap" id="conflicts" aria-labelledby="h-conf">
+  <div class="chap-h">
+    <div class="no"><b>06</b> / ตัวเลขที่ยังขัดกัน</div>
+    <div><h2 id="h-conf">ระวังก่อนหยิบตัวเลขไปใช้</h2></div>
+  </div>
+  <div class="tbl rv">
+    <table>
+      <thead><tr><th>เรื่อง</th><th>ตัวเลขที่ปรากฏ</th><th>ใครพูด</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td>เงินที่เข้าผู้รับเหมา</td><td class="n">45 ล้าน</td><td class="w">ช่างเอ๋ ในรายการโหนกระแส 29 ต.ค.</td></tr>
+        <tr><td></td><td class="n">45–50 ล้าน</td><td class="w">สนธิญา สวัสดี ในหนังสือถึง ปปง. 2 พ.ย.</td></tr>
+        <tr><td></td><td class="n">≈75 ล้าน</td><td class="w">ทนายกุ้ง หลังช่างเอ๋ให้ปากคำ 3 พ.ย.</td></tr>
+        <tr><td></td><td class="n">50 ล้าน</td><td class="w">ยอดในคดีที่บุ๋มแจ้งความก๊อตและผู้รับเหมา (ปรากฏในพาดหัว Thai PBS)</td></tr>
+        <tr class="grp"><td>เงินที่ถูกเบิกออก</td><td class="n">800 ล้าน</td><td class="w">อั๋น ภูวนาท เล่าต่อจากหนุ่ม กรรชัย</td></tr>
+        <tr><td></td><td class="n">ไม่ถึง 800</td><td class="w">สรยุทธ อ้างแหล่งข่าวตำรวจ</td></tr>
+        <tr><td></td><td class="n">ไม่มีข้อมูล</td><td class="w">ผบก.ปอศ. 4 พ.ย.</td></tr>
+        <tr class="grp"><td>รายการตัวอย่าง 23 ธ.ค. 68</td><td class="n">6 รายการ ≈45 ล้าน</td><td class="w">Thai PBS แสดงจริง 4 รายการ รวม 21 ล้าน</td></tr>
+        <tr class="grp"><td>วันจดทะเบียนมูลนิธิ</td><td class="n">30 มี.ค. 2565</td><td class="w">ราชกิจจานุเบกษา ตาม PPTV · Thai PBS ระบุอีกจุดว่า 2 มิ.ย. 2565</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="chap wrap" id="timeline" aria-labelledby="h-tl">
+  <div class="chap-h">
+    <div class="no"><b>07</b> / ไทม์ไลน์</div>
+    <div><h2 id="h-tl">จากบัญชีแรก ถึงสัปดาห์นี้</h2></div>
+  </div>
+  <ol class="tl">
+    <li class="rv"><span class="d">2557</span><span class="ev">เปิดบัญชี “องค์กรทำดี โดย น.ส.ปนัดดา” ด้วยเงินส่วนตัว ช่วงตั้งกลุ่มจิตอาสา</span></li>
+    <li class="rv"><span class="d">2562</span><span class="ev">ปีที่ตำรวจเริ่มไล่ตรวจบัญชีย้อนหลัง</span></li>
+    <li class="rv big"><span class="d">30.03.2565</span><span class="ev">จดทะเบียนมูลนิธิกับนายทะเบียนกรุงเทพฯ เลขที่ กท 3275 ทุน 500,000 บาท</span></li>
+    <li class="rv"><span class="d">25.07.2565</span><span class="ev">มติกรรมการรับบัญชีแรกเป็นบัญชีของมูลนิธิ</span></li>
+    <li class="rv"><span class="d">18.09.2567</span><span class="ev">หนุ่ม กรรชัย โอน 1 ล้านบาท ช่วยน้ำท่วมเชียงราย</span></li>
+    <li class="rv big"><span class="d">06.06.2568</span><span class="ev">จดทะเบียนบริษัทโครงการพูลวิลลา ก๊อตถือหุ้นใหญ่</span></li>
+    <li class="rv big"><span class="d">23.12.2568</span><span class="ev">รายการโอนเข้าผู้รับเหมาและโอนต่อให้สามี ตามที่ Thai PBS รายงาน</span></li>
+    <li class="rv"><span class="d">03.09.2569</span><span class="ev">บริษัทพูลวิลลาจดเลิก</span></li>
+    <li class="rv"><span class="d">27.10.2569</span><span class="ev">บุ๋มแถลงข่าวปมที่ดินราชพัสดุ ยืนยันไม่เกี่ยวกับธุรกิจสามี</span></li>
+    <li class="rv"><span class="d">28.10</span><span class="ev">มูลนิธิออกแถลงการณ์เรื่อง 2 บัญชี</span></li>
+    <li class="rv big"><span class="d">29.10</span><span class="ev">ช่างเอ๋ออกรายการโหนกระแส (45 ล้าน) · มูลนิธิให้บุ๋มยุติหน้าที่ประธานชั่วคราว พรพรรณ ภุมรินทร์ รักษาการ หยุดรับบริจาคทุกช่องทาง</span></li>
+    <li class="rv"><span class="d">30.10</span><span class="ev">ออยศรีร้องทุกข์ต่อ บช.ก. · กรมการปกครองแจงอำนาจร้องศาล · สรรพากรแจงว่าบริจาคลดหย่อนภาษีไม่ได้</span></li>
+    <li class="rv"><span class="d">02.11</span><span class="ev">ผบช.ก. เผยเงินหมุนเวียนเกือบพันล้าน · สนธิญายื่น ปปง.</span></li>
+    <li class="rv big"><span class="d">03.11</span><span class="ev">บุ๋มแจ้งความก๊อตและผู้รับเหมา แถลงขอโทษ · ปอศ. ชี้เข้าข่ายตัวการร่วม · ช่างเอ๋ให้ปากคำ (≈75 ล้าน)</span></li>
+    <li class="rv big"><span class="d">04.11</span><span class="ev">ผบก.ปอศ. ยืนยันมีการใช้ส่วนตัว · มท. เผยไม่เคยส่งงบดุล · ก๊อตรับหมายเรียกพยาน · ตำรวจเรียกผู้รับเหมาอาคารคลอง 8</span></li>
+    <li class="rv next"><span class="d">05–09.11</span><span class="ev">ตำรวจคาดสรุปหมายเรียกผู้ต้องหาหรือหมายจับ</span></li>
+    <li class="rv next"><span class="d">10.11</span><span class="ev">เส้นตายมูลนิธิส่งเอกสารการเงินต่อกระทรวงมหาดไทย</span></li>
+  </ol>
+</section>
+
+<!-- 08 -->
+<section class="chap wrap" id="sources" aria-labelledby="h-src">
+  <div class="chap-h">
+    <div class="no"><b>08</b> / แหล่งข่าว</div>
+    <div><h2 id="h-src">ข่าว 32 ชิ้นที่ใช้ในแฟ้มนี้</h2></div>
+  </div>
+  <div class="sources">
+    <h3>28–29 ต.ค. 2569</h3>
+    <ol>
+      <li><a href="https://www.thairath.co.th/entertain/news/2968953" target="_blank" rel="noopener">ไทยรัฐ · มูลนิธิกางหลักฐานแจงปมบัญชี</a></li>
+      <li><a href="https://www.bangkokbiznews.com/news/1258313" target="_blank" rel="noopener">กรุงเทพธุรกิจ · เคลียร์ปม 2 บัญชีรับบริจาค</a></li>
+      <li><a href="https://www.thairath.co.th/scoop/theissue/2969191" target="_blank" rel="noopener">ไทยรัฐ · เส้นแบ่งเงินบริจาคกับบัญชีส่วนตัว</a></li>
+    </ol>
+    <h3>30 ต.ค. 2569</h3>
+    <ol start="4">
+      <li><a href="https://thestandard.co/boom-panadda-good-deed-foundation-investigation/" target="_blank" rel="noopener">THE STANDARD · จากน้ำตาสู่ปมเงินบริจาค 45 ล้าน</a></li>
+      <li><a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS · ตรวจสอบเส้นทางเงินบริจาค เปิดที่มา 2 บัญชี</a></li>
+      <li><a href="https://www.thaipbs.or.th/news/content/571921" target="_blank" rel="noopener">Thai PBS · เปิดข้อบังคับมูลนิธิ</a></li>
+      <li><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286199" target="_blank" rel="noopener">PPTV · วัตถุประสงค์และเงื่อนไขเลิกมูลนิธิ</a></li>
+      <li><a href="https://www.thansettakij.com/economy/672631" target="_blank" rel="noopener">ฐานเศรษฐกิจ · สรรพากรแจงบริจาคลดหย่อนไม่ได้</a></li>
+      <li><a href="https://www.bangkokbiznews.com/politics/1258602" target="_blank" rel="noopener">กรุงเทพธุรกิจ · กรมการปกครองแจง 2 ปม</a></li>
+    </ol>
+    <h3>2 พ.ย. 2569</h3>
+    <ol start="10">
+      <li><a href="https://www.siamnews.com/news/crime/56516" target="_blank" rel="noopener">สยามนิวส์ · ตำรวจเผยบัญชีมูลนิธิ</a></li>
+      <li><a href="https://thestandard.co/cib-probes-good-deed-foundation-finances/" target="_blank" rel="noopener">THE STANDARD · ตร.ลุยตรวจเส้นทางการเงิน</a></li>
+      <li><a href="https://thestandard.co/investigation-boom-panadda-good-deed-foundation/" target="_blank" rel="noopener">THE STANDARD · ผังใครตรวจอะไร</a></li>
+      <li><a href="https://www.thebangkokinsight.com/news/politics-general/general/1715706/" target="_blank" rel="noopener">Bangkok Insight · สนธิญายื่น ปปง.</a></li>
+      <li><a href="https://spacebar.th/social/boom-2-november-2026" target="_blank" rel="noopener">Spacebar · เจาะยอดบริจาค เร่งสรุปผลภายใน 9 พ.ย.</a></li>
+    </ol>
+    <h3>3 พ.ย. 2569</h3>
+    <ol start="15">
+      <li><a href="https://thestandard.co/police-evidence-boom-panadda-donation-fraud/" target="_blank" rel="noopener">THE STANDARD · ปอศ.ชี้พยานหลักฐานมัด</a></li>
+      <li><a href="https://www.matichon.co.th/local/news_5959769" target="_blank" rel="noopener">มติชน · ปอศ.สอบเส้นเงิน ยันผิดฐานตัวการร่วม</a></li>
+      <li><a href="https://www.thereporters.co/tw-crime/0311261835/" target="_blank" rel="noopener">The Reporters · เตรียมพิจารณา 3 ข้อหา</a></li>
+      <li><a href="https://thairath.co.th/news/crime/2970061" target="_blank" rel="noopener">ไทยรัฐ · บุ๋มขอโทษสังคม พร้อมนำทรัพย์สินส่วนตัวชดใช้</a></li>
+      <li><a href="https://www.dailynews.co.th/news/6327203/" target="_blank" rel="noopener">เดลินิวส์ · บุ๋มเปิดใจหลังแจ้งความสามี</a></li>
+      <li><a href="https://www.thairath.co.th/news/crime/2970256" target="_blank" rel="noopener">ไทยรัฐ · ช่างเอ๋ให้ปากคำ พบเงินเข้าบัญชี 75 ล้าน</a></li>
+      <li><a href="https://mgronline.com/crime/detail/9690000105568" target="_blank" rel="noopener">ผู้จัดการ · ช่างเอ๋แจงเงินโอนสร้างพูลวิลลา</a></li>
+    </ol>
+    <h3>4 พ.ย. 2569</h3>
+    <ol start="22">
+      <li><a href="https://www.thaipbs.or.th/news/content/572130" target="_blank" rel="noopener">Thai PBS · ชมพู่ให้ข้อมูล ช่างเอ๋เผยเงินเข้า 75 ล้าน</a></li>
+      <li><a href="https://www.thaipbs.or.th/news/content/572146" target="_blank" rel="noopener">Thai PBS · ตร.ไม่ปักใจเชื่อถูกสามีหลอก</a></li>
+      <li><a href="https://www.dailynews.co.th/news/6330260/" target="_blank" rel="noopener">เดลินิวส์ · ผู้การ ปอศ.ไม่เชื่อว่าเป็นเหยื่อ</a></li>
+      <li><a href="https://www.matichon.co.th/local/crime/news_5960450" target="_blank" rel="noopener">มติชน · ปอศ.ไม่ให้น้ำหนักข้ออ้างไม่รู้เห็น</a></li>
+      <li><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286451" target="_blank" rel="noopener">PPTV · อั๋น ภูวนาท กับตัวเลข 800 ล้าน</a></li>
+      <li><a href="https://www.matichon.co.th/local/news_5960539" target="_blank" rel="noopener">มติชน · สรยุทธเช็กแหล่งข่าว ไม่ถึง 800 ล้าน</a></li>
+      <li><a href="https://www.amarintv.com/news/entertain/561950" target="_blank" rel="noopener">อมรินทร์ทีวี · หนุ่ม กรรชัย “ยอดภูเขาน้ำแข็ง”</a></li>
+      <li><a href="https://mgronline.com/crime/detail/9690000105701" target="_blank" rel="noopener">ผู้จัดการ · ผบช.ก.ยัน 1–2 วันชัดเจน</a></li>
+      <li><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286481" target="_blank" rel="noopener">PPTV · ตำรวจลั่นใครผิดไม่ละเว้น</a></li>
+      <li><a href="https://www.dailynews.co.th/news/6331074/" target="_blank" rel="noopener">เดลินิวส์ · ก๊อตรับหมายเรียก ยื่นหนังสือแสดงเจตนาสุจริต</a></li>
+      <li><a href="https://www.thebangkokinsight.com/news/politics-general/general/1716673/" target="_blank" rel="noopener">Bangkok Insight · มูลนิธิไม่เคยส่งงบดุล</a></li>
+    </ol>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p class="quote rv">“ตรวจสอบได้ทุกบาท ทุกสตางค์”</p>
+  <p class="quote-by">คำยืนยันของบุ๋ม ปนัดดา ต่อสื่อ เรื่องบัญชีมูลนิธิ · <a href="https://www.thairath.co.th/scoop/theissue/2969191" target="_blank" rel="noopener" style="color:var(--ink2)">ไทยรัฐ 29 ต.ค. 2569</a></p>
+  <p class="sent">กลับไปดู <a href="#flow-sec">ผังเส้นเงิน</a> หรือ <a href="#exhibits">หลักฐานทีละเส้น</a> หรือ <a href="#sources">แหล่งข่าว</a></p>
+  <div class="fine">
+    <div><b>ข้อจำกัด</b>รวบรวมจากรายงานข่าวออนไลน์ภาษาไทย ไม่ได้เห็นรายการเดินบัญชี มติกรรมการ หรือสำนวนคดี ยังไม่มีการแจ้งข้อกล่าวหาอย่างเป็นทางการหรือคำพิพากษา ทุกคนที่ถูกพาดพิงยังได้รับการสันนิษฐานว่าบริสุทธิ์</div>
+    <div><b>ข้อมูล ณ</b>เย็นวันที่ 4 พฤศจิกายน 2569 สถานการณ์เปลี่ยนเร็ว ควรเช็กข่าวล่าสุดก่อนนำไปใช้ต่อ</div>
+    <div><b>ซอร์สโค้ด</b><a href="https://github.com/kawin-work/follow-the-money" target="_blank" rel="noopener">github.com/kawin-work/follow-the-money</a> · ฟอนต์ Noto Serif Thai, IBM Plex Sans Thai, JetBrains Mono (SIL OFL)</div>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+
+  /* loader */
+  var loader=document.getElementById('loader'), lc=document.getElementById('lcount');
+  function endLoader(){ if(loader) loader.classList.add('done'); }
+  if(reduce){ endLoader(); }
+  else {
+    var t0=performance.now(), dur=1100;
+    (function step(t){ var p=Math.min(1,(t-t0)/dur); lc.textContent=String(Math.round(p*100)).padStart(3,'0'); if(p<1) requestAnimationFrame(step); else setTimeout(endLoader,180); })(t0);
+    setTimeout(endLoader,2500);
+  }
+
+  /* bar background on scroll */
+  var bar=document.getElementById('bar');
+  function onScroll(){ bar.classList.toggle('solid', window.scrollY>40); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* menu */
+  var menu=document.getElementById('menu'), mb=document.getElementById('menuBtn'), mc=document.getElementById('menuClose');
+  function setMenu(o){ menu.classList.toggle('open',o); menu.setAttribute('aria-hidden',String(!o)); mb.setAttribute('aria-expanded',String(o)); document.body.style.overflow=o?'hidden':''; if(o) menu.querySelector('a').focus(); else mb.focus({preventScroll:true}); }
+  mb.addEventListener('click',function(){ setMenu(true); });
+  mc.addEventListener('click',function(){ setMenu(false); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); mb.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && menu.classList.contains('open')) setMenu(false); });
+
+  /* hero parallax */
+  var frags=[].slice.call(document.querySelectorAll('.frag'));
+  if(!reduce && fine){
+    var tx=0,ty=0,cx=0,cy=0;
+    window.addEventListener('mousemove',function(e){ tx=(e.clientX/window.innerWidth-.5); ty=(e.clientY/window.innerHeight-.5); },{passive:true});
+    (function loop(){
+      cx+=(tx-cx)*.06; cy+=(ty-cy)*.06;
+      if(window.scrollY < window.innerHeight*1.1){
+        for(var i=0;i<frags.length;i++){ var d=parseFloat(frags[i].style.getPropertyValue('--d'))||.5; frags[i].style.setProperty('--px',(-cx*70*d).toFixed(2)+'px'); frags[i].style.setProperty('--py',(-cy*50*d).toFixed(2)+'px'); }
+      }
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* cursor */
+  var cur=document.getElementById('cur');
+  if(!reduce && fine && cur){
+    var mx=-100,my=-100,px=-100,py=-100;
+    window.addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; },{passive:true});
+    document.addEventListener('mouseover',function(e){ cur.classList.toggle('big', !!e.target.closest('a,button,.edge')); });
+    (function cl(){ px+=(mx-px)*.25; py+=(my-py)*.25; cur.style.transform='translate('+px+'px,'+py+'px)'; requestAnimationFrame(cl); })();
+  }
+
+  /* reveal + counters */
+  var vh=window.innerHeight;
+  var rvs=[].slice.call(document.querySelectorAll('.rv'));
+  var cnts=[].slice.call(document.querySelectorAll('.cnt'));
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.remove('pre'); io.unobserve(en.target); } }); },{rootMargin:'0px 0px -8% 0px'});
+    rvs.forEach(function(el){ if(el.getBoundingClientRect().top>vh){ el.classList.add('pre'); io.observe(el); } });
+    var fmt=function(n){ return Math.round(n).toLocaleString('en-US'); };
+    var co=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) return; var el=en.target, to=+el.getAttribute('data-to'), s=performance.now(); co.unobserve(el); if(to===0) return; (function f(t){ var p=Math.min(1,(t-s)/1400); var e=1-Math.pow(1-p,3); el.textContent=fmt(to*e); if(p<1) requestAnimationFrame(f); })(s); }); },{threshold:.6});
+    cnts.forEach(function(el){ if(el.getBoundingClientRect().top>vh) co.observe(el); });
+  }
+
+  /* flow diagram */
+  var svg=document.getElementById('flow');
+  if(reduce && svg.pauseAnimations) svg.pauseAnimations();
+  var edges=[].slice.call(svg.querySelectorAll('.edge'));
+  var order=['1','2','3','4','5','6','7','8','9','10','11'];
+  var cap={
+    '1':['ประชาชน → บัญชีชื่อบุคคล และบัญชีมูลนิธิ','ประชาชนโอนเงินบริจาคได้ทั้งบัญชีมูลนิธิ และบัญชี “องค์กรทำดี โดย น.ส.ปนัดดา” ที่เปิดก่อนจดทะเบียน ตำรวจระบุเงินหมุนเวียนตั้งแต่ปี 2562 เกือบ 1,000 ล้านบาท (เบื้องต้น)'],
+    '2':['คนดังและผู้บริจาครายใหญ่','ตำรวจเริ่มไล่เส้นเงินจากผู้บริจาครายใหญ่ เช่น หนุ่ม กรรชัย ที่ให้ปากคำว่าโอน 1 ล้านบาท เมื่อ 18 ก.ย. 2567'],
+    '3':['บัญชีมูลนิธิ → บัญชีชื่อบุคคล','หนุ่ม กรรชัยเล่าว่าเห็นในผังของตำรวจว่าเงินจากบัญชีมูลนิธิโอนกลับเข้าบัญชีชื่อบุคคล ก่อนส่งต่อให้ผู้ชายคนใกล้ตัว ตำรวจยังไม่แถลงเรื่องนี้เอง'],
+    '4':['บัญชี → อาคารมูลนิธิ คลอง 8','บุ๋มชี้แจงว่าเงินที่จ่ายผู้รับเหมาใช้สร้างอาคารมูลนิธิที่คลอง 8 ตำรวจจะตรวจว่ามีสัญญาหรือไม่ และจ่ายเกินมูลค่างานหรือไม่'],
+    '5':['บัญชี → ช่างเอ๋ ผู้รับเหมา','ตำรวจ ปอศ. ระบุว่าบุ๋มโอนเงินจากบัญชีตรงไปยังผู้รับเหมา ฝั่งผู้รับเหมาอ้างยอดราว 75 ล้าน (โอน 63 + เงินสด 12) รายการตัวอย่างโอนครั้งละ 3.6 และ 13.7 ล้าน ขณะที่ข้อบังคับให้ประธานอนุมัติเองได้ไม่เกิน 5 แสนบาทต่อครั้ง'],
+    '6':['ช่างเอ๋ → พูลวิลลา 8 หลัง','ผู้รับเหมาเล่าว่าเงินส่วนหนึ่งใช้สร้างพูลวิลลา 8 หลังที่ภูเก็ต ของบริษัทที่ก๊อตถือหุ้นใหญ่ และบริษัทจดเลิกไปเมื่อ 3 ก.ย. 2569'],
+    '7':['ช่างเอ๋ → ก๊อต และคนใกล้ชิด','ตำรวจระบุว่าผู้รับเหมาเป็น “ทางผ่าน” ก่อนถอนเงินกลับให้คนใกล้ชิด Thai PBS รายงานตัวอย่างโอน 1.9 และ 1.8 ล้าน ถึงสามีบุ๋มในคืนเดียวกัน'],
+    '8':['บุ๋ม → ก๊อต โดยตรง','ตำรวจพบเงินจำนวนมากโอนจากบุ๋มถึงก๊อตโดยตรง ก๊อตอาจถูกพิจารณาคดีฐานฟอกเงิน ส่วนก๊อตโพสต์ว่ารับหมายเรียกในฐานะพยาน'],
+    '9':['บัญชี → ใช้จ่ายส่วนตัว','ผบก.ปอศ. ยืนยันว่ามีการใช้เงินบริจาคส่วนตัว แต่ยังไม่เปิดยอด ตัวเลข 800 ล้านที่พูดกันยังไม่มีใครยืนยัน'],
+    '10':['บัญชี → ช่วยเหลือผู้เดือดร้อน','การช่วยเหลือตามวัตถุประสงค์มูลนิธิยังดำเนินอยู่ แต่ยังไม่มีข่าวเปิดยอดเงินส่วนนี้'],
+    '11':['เงินสดในตู้เซฟ','บุ๋มอ้างว่าเงินสดในตู้เซฟหายไปกว่า 7 ล้าน ขณะที่ข้อบังคับให้เหรัญญิกถือเงินสดได้ครั้งละไม่เกิน 2 แสนบาท']
+  };
+  var subIdx=document.getElementById('subIdx'), subTxt=document.getElementById('subTxt');
+  var current=null, playing=null;
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function show(k){
+    current=k;
+    svg.classList.toggle('focusing',!!k);
+    edges.forEach(function(g){ g.classList.toggle('on', !!k && g.getAttribute('data-k')===k); });
+    if(!k) return;
+    var c=cap[k];
+    subIdx.innerHTML='<b>'+String(k).padStart(2,'0')+'</b> / 11';
+    subTxt.innerHTML='<span class="ttl">'+esc(c[0])+'</span><span>'+esc(c[1])+'</span><a href="#ex-'+k+'">อ่านหลักฐานเต็ม ↓</a>';
+  }
+  function stop(){ if(playing){ clearInterval(playing); playing=null; setPlayIcon(false); } }
+  function step(dir){ var i=current?order.indexOf(current):-1; i=(i+dir+order.length)%order.length; show(order[i]); }
+  var playIco=document.getElementById('playIco');
+  function setPlayIcon(on){ playIco.innerHTML= on ? '<path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/>' : '<path d="M3 1.5v11l9-5.5z"/>'; document.getElementById('playBtn').setAttribute('aria-label', on?'หยุดเล่น':'เล่นไล่ทีละเส้น'); }
+  document.getElementById('playBtn').addEventListener('click',function(){ if(playing){ stop(); return; } clearFilter(); step(1); setPlayIcon(true); playing=setInterval(function(){ step(1); }, 4200); });
+  document.getElementById('nextBtn').addEventListener('click',function(){ stop(); clearFilter(); step(1); });
+  document.getElementById('prevBtn').addEventListener('click',function(){ stop(); clearFilter(); step(-1); });
+  edges.forEach(function(g){
+    var k=g.getAttribute('data-k');
+    g.addEventListener('click',function(){ stop(); clearFilter(); show(k); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); stop(); clearFilter(); show(k); } });
+    g.addEventListener('mouseenter',function(){ if(!playing && !current){ svg.classList.add('focusing'); g.classList.add('on'); } });
+    g.addEventListener('mouseleave',function(){ if(!playing && !current){ svg.classList.remove('focusing'); g.classList.remove('on'); } });
+  });
+  /* filters */
+  var fbtns=[].slice.call(document.querySelectorAll('.fbtn'));
+  function clearFilter(){ svg.classList.remove('filtering'); edges.forEach(function(g){ g.classList.remove('keep'); }); fbtns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-f')==='all')); }); }
+  fbtns.forEach(function(b){ b.addEventListener('click',function(){
+    stop(); show(null); current=null;
+    var f=b.getAttribute('data-f');
+    fbtns.forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); });
+    if(f==='all'){ svg.classList.remove('filtering'); edges.forEach(function(g){ g.classList.remove('keep'); }); return; }
+    svg.classList.add('filtering');
+    edges.forEach(function(g){ g.classList.toggle('keep', g.classList.contains('lv-'+f)); });
+  }); });
+
+  /* flash exhibit on anchor */
+  document.addEventListener('click',function(e){ var a=e.target.closest('a[href^="#ex-"]'); if(!a) return; var t=document.querySelector(a.getAttribute('href')); if(!t) return; t.classList.add('flash'); setTimeout(function(){ t.classList.remove('flash'); },1800); });
+})();
+</script>
+</body>
+</html>
