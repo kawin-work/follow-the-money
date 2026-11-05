@@ -24,6 +24,7 @@
   --bg:#050607; --bg2:#0A0C0F; --panel:#0D1014; --panel2:#12161B;
   --ink:#ECE7DE; --ink2:#BDB7AD; --dim:#7F858D; --line:#21262C; --line2:#323840;
   --off:#7FA6FF; --claim:#E2A443; --unv:#B48FFF; --neu:#6E7680; --flag:#FF5440;
+  --st-pre:#8A9099; --st-probe:#D7DCE4; --st-freeze:#FF8A1F; --st-warrant:#FF2D55;
   --off-bg:rgba(127,166,255,.11); --claim-bg:rgba(226,164,67,.12); --unv-bg:rgba(180,143,255,.12); --flag-bg:rgba(255,84,64,.12);
   --paper:#E8E2D4; --paper-ink:#1A1813;
   --f-disp:"Noto Serif Thai","Noto Serif",Georgia,"Times New Roman",serif;
@@ -286,6 +287,32 @@ section.chap{padding-block:clamp(72px,10vw,140px) 0}
 .legend .fresh-key{display:inline-flex;align-items:center;gap:8px}
 .legend .fresh-key i{width:16px;height:10px;border:2px solid var(--ink);border-radius:2px;box-shadow:0 0 6px rgba(236,231,222,.5)}
 
+/* case status: colour follows the latest stage; the latest status gets the strongest treatment */
+[data-stage="pre"]{--sc:var(--st-pre)}[data-stage="probe"]{--sc:var(--st-probe)}[data-stage="freeze"]{--sc:var(--st-freeze)}[data-stage="warrant"]{--sc:var(--st-warrant)}
+#flow g.stbox rect.st-box{stroke:var(--sc);stroke-width:1.5}
+#flow g.stbox rect.st-head{fill:transparent}
+#flow g.stbox text.st-title{fill:var(--sc)}
+#flow g.stbox circle.st-dot{fill:#0B0C0E;opacity:0}
+#flow g.stbox.st-now rect.st-box{stroke-width:2.6;fill:var(--panel);fill:color-mix(in srgb,var(--sc) 10%,var(--panel));filter:drop-shadow(0 0 9px var(--sc))}
+#flow g.stbox.st-now rect.st-head{fill:var(--sc)}
+#flow g.stbox.st-now text.st-title{fill:#0B0C0E !important;font-weight:700}
+#flow g.stbox.st-now circle.st-dot{opacity:1;animation:stpulse 1.3s ease-in-out infinite}
+@keyframes stpulse{50%{opacity:.15}}
+@media (prefers-reduced-motion:reduce){#flow g.stbox.st-now circle.st-dot{animation:none}}
+.board[data-stage]{border-top:3px solid var(--sc);transition:border-color .4s}
+.tb-st{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:3px 12px 3px 10px;border-radius:99px;background:var(--sc);color:#0B0C0E;font-size:13px;transition:background-color .4s}
+.tb-st i{width:7px;height:7px;border-radius:50%;background:#0B0C0E;animation:stpulse 1.3s ease-in-out infinite}
+.tb-st span{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em}
+.tb-st b{font-weight:600}
+.st-chip{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;line-height:1.6;padding:0 9px;border-radius:99px;border:1px solid var(--sc);color:var(--sc);white-space:nowrap}
+.st-chip.now{background:var(--sc);color:#0B0C0E;font-weight:600}
+.uc-dd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.st-legend{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.st-legend .lk{margin-right:2px}
+.st-v{display:inline-flex;align-items:center;gap:7px;color:var(--sc);font-weight:600}
+.st-v i{width:7px;height:7px;border-radius:50%;background:var(--sc);box-shadow:0 0 8px var(--sc);animation:stpulse 1.3s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.tb-st i,.st-v i{animation:none}}
+
 /* update cards */
 .updates{margin-top:clamp(40px,5vw,64px)}
 .upd-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
@@ -405,11 +432,11 @@ section.chap{padding-block:clamp(72px,10vw,140px) 0}
 .tl .ev{font-size:15.5px;color:var(--ink2);font-weight:300}
 .tl li.big .d{color:var(--ink)}
 .tl li.big .ev{color:var(--ink);font-weight:400}
-.tl li.ms{background:linear-gradient(90deg,var(--flag-bg),transparent 75%);margin-left:-14px;padding-left:11px;border-left:3px solid var(--flag)}
-.tl li.ms .d{color:var(--flag)}
+.tl li.ms{--sc:var(--st-warrant);background:linear-gradient(90deg,rgba(255,45,85,.14),transparent 75%);margin-left:-14px;padding-left:11px;border-left:3px solid var(--sc)}
+.tl li.ms .d{color:var(--sc)}
 .tl li.ms .ev{color:var(--ink);font-weight:400}
 .tl li.ms .ev b{font-weight:600}
-.tl .ms-k{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--flag);margin-top:6px}
+.tl .ms-k{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;color:var(--sc,var(--flag));margin-top:6px}
 .tl li.next .d{color:var(--flag)}
 .tl li.next .ev{color:var(--ink)}
 @media (max-width:640px){.tl li{grid-template-columns:1fr;gap:4px}}
@@ -473,7 +500,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     <span><span class="t1 sc">Follow the Money</span><span class="t2">แฟ้ม 2569 · องค์กรทำดี</span></span>
   </a>
   <div class="bar-r">
-    <a class="pillbtn solid hide-sm" href="#flow-sec">ผังเส้นเงิน ↘</a>
+    <a class="pillbtn solid hide-sm" href="#flow-sec">ไทม์ไลน์เส้นเงิน ↘</a>
     <button class="pillbtn" id="menuBtn" aria-expanded="false" aria-controls="menu">เมนู <span class="burger" aria-hidden="true"></span></button>
   </div>
 </header>
@@ -482,13 +509,13 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
   <button class="pillbtn close" id="menuClose">ปิด ✕</button>
   <ol>
     <li><a href="#brief"><span>01</span>สรุปคดี</a></li>
-    <li><a href="#flow-sec"><span>02</span>ผังเส้นเงิน</a></li>
+    <li><a href="#flow-sec"><span>02</span>ไทม์ไลน์เส้นเงิน</a></li>
     <li><a href="#updates"><span>02.1</span>อัปเดตตามลำดับเวลา</a></li>
     <li><a href="#exhibits"><span>03</span>หลักฐานทีละเส้น</a></li>
     <li><a href="#ledger"><span>04</span>สมุดบัญชี</a></li>
     <li><a href="#people"><span>05</span>บุคคลและหน่วยงาน</a></li>
     <li><a href="#conflicts"><span>06</span>ตัวเลขที่ยังขัดกัน</a></li>
-    <li><a href="#timeline"><span>07</span>ไทม์ไลน์</a></li>
+    <li><a href="#timeline"><span>07</span>ลำดับเหตุการณ์</a></li>
     <li><a href="#sources"><span>08</span>แหล่งข่าว</a></li>
   </ol>
 </nav>
@@ -521,14 +548,14 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       <h1 class="h1" id="h1">ตามรอยเงิน<span class="l2">มูลนิธิองค์กรทำดี</span></h1>
       <p class="dek">เงินบริจาคเข้าทั้งบัญชีมูลนิธิและบัญชีชื่อบุคคล ก่อนส่วนหนึ่งไปถึงผู้รับเหมาพูลวิลลาที่ภูเก็ต แล้ววนกลับไปหาสามีของประธานมูลนิธิ ตำรวจอายัดบัญชีของบุ๋มและสามีแล้วราว 10 ล้านบาท และวันที่ 5 พ.ย. ศาลอาญาออกหมายจับทั้งสองคน ผังนี้แยกว่าเส้นไหนตำรวจแถลง เส้นไหนเป็นคำอ้างของคู่กรณี และเส้นไหนยังไม่มีใครยืนยัน</p>
       <div class="cta">
-        <a href="#flow-sec"><span class="th">ดูผังเส้นเงิน</span><span>→</span></a>
+        <a href="#flow-sec"><span class="th">ดูไทม์ไลน์เส้นเงิน</span><span>→</span></a>
         <a href="#exhibits"><span class="th">อ่านหลักฐาน 13 เส้น</span><span>→</span></a>
       </div>
     </div>
     <aside class="badge" aria-label="ข้อมูลแฟ้ม">
-      <div class="row"><span class="k">อัปเดต</span><span class="v mono">05.11.2569 · 18:00</span></div>
+      <div class="row"><span class="k">อัปเดต</span><span class="v mono">05.11.2569 · 17:30</span></div>
       <div class="row"><span class="k">แหล่งข่าว</span><span class="v">53 ชิ้น · 21 สำนัก</span></div>
-      <div class="row"><span class="k">สถานะ</span><span class="v">ศาลออกหมายจับ 2 คนแล้ว</span></div>
+      <div class="row"><span class="k">สถานะ</span><span class="v st-v" data-stage="warrant"><i></i>ศาลออกหมายจับ 2 คนแล้ว</span></div>
     </aside>
   </div>
   <div class="wrap hero-foot">
@@ -611,14 +638,14 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <!-- 02 -->
 <section class="chap wrap" id="flow-sec" aria-labelledby="h-flow">
   <div class="chap-h">
-    <div class="no"><b>02</b> / ผังเส้นเงิน</div>
+    <div class="no"><b>02</b> / ไทม์ไลน์เส้นเงิน</div>
     <div>
-      <h2 id="h-flow">เงินเข้ามาจากไหน ออกไปทางไหน</h2>
-      <p>ลายเส้นบอกว่าใครเป็นคนพูดถึงเส้นนั้น เลื่อนแถบเวลาเพื่อดูว่าแต่ละเส้นปรากฏในข่าวเมื่อไร และเปลี่ยนจากคำอ้างเป็นคำยืนยันของตำรวจตอนไหน แตะเส้นใดก็ได้เพื่ออ่านรายละเอียด</p>
+      <h2 id="h-flow">เงินไปทางไหน และคดีเดินถึงไหน</h2>
+      <p>ส่วนนี้รวมเส้นทางเงินกับไทม์ไลน์คดีไว้ในผังเดียว ลายเส้นบอกว่าใครเป็นคนพูดถึงเส้นนั้น เลื่อนแถบเวลาเพื่อดูว่าแต่ละเส้นปรากฏในข่าวเมื่อไร เปลี่ยนจากคำอ้างเป็นคำยืนยันของตำรวจตอนไหน และคดีเดินถึงขั้นไหนแล้ว กล่องที่มีแถบสีทึบคือสถานะคดีล่าสุด ณ ช่วงที่เลือก แตะเส้นใดก็ได้เพื่ออ่านรายละเอียด</p>
     </div>
   </div>
 
-  <div class="board">
+  <div class="board" id="board" data-stage="warrant">
     <div class="board-top">
       <div class="filters" role="group" aria-label="กรองตามระดับหลักฐาน">
         <button class="fbtn" data-f="all" aria-pressed="true">ทุกเส้น</button>
@@ -626,10 +653,10 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
         <button class="fbtn" data-f="claim" aria-pressed="false"><i></i>คู่กรณีอ้าง</button>
         <button class="fbtn" data-f="unv" aria-pressed="false"><i></i>ยังไม่ยืนยัน</button>
       </div>
-      <span class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--dim)">FIG. 01 · MONEY TRAIL</span>
+      <span class="mono" style="font-size:11px;letter-spacing:.14em;color:var(--dim)">FIG. 01 · MONEY TRAIL × TIMELINE</span>
     </div>
     <div class="timebar">
-      <div class="tb-now" aria-live="polite"><span class="tb-k mono">ข้อมูลในผัง ณ</span><b id="tbDate">05.11.2569</b><span class="tb-t" id="tbTitle">ศาลออกหมายจับบุ๋มและก๊อต</span></div>
+      <div class="tb-now" aria-live="polite"><span class="tb-k mono">ข้อมูลในผัง ณ</span><b id="tbDate">05.11.2569</b><span class="tb-t" id="tbTitle">ศาลออกหมายจับบุ๋มและก๊อต</span><span class="tb-st" id="tbSt" data-stage="warrant"><i></i><span>สถานะคดี</span><b id="tbStL">ออกหมายจับ</b></span></div>
       <div class="tb-rail">
         <input type="range" id="tbRange" min="1" max="7" step="1" value="7" aria-label="เลือกช่วงเวลาของข้อมูลในผัง">
         <div class="tb-ticks"><button type="button" class="tk" data-go="1" style="--p:0.0000%">28/10</button><button type="button" class="tk" data-go="2" style="--p:16.6667%">29–30/10</button><button type="button" class="tk" data-go="3" style="--p:33.3333%">2/11</button><button type="button" class="tk" data-go="4" style="--p:50.0000%">3/11</button><button type="button" class="tk" data-go="5" style="--p:66.6667%">4/11</button><button type="button" class="tk" data-go="6" style="--p:83.3333%">4/11 เย็น</button><button type="button" class="tk" data-go="7" style="--p:100.0000%">5/11</button></div>
@@ -853,9 +880,11 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     <g class="tagc off"><circle cx="946" cy="283" r="9"/><text x="946" y="283">7</text></g>
     <text class="lbl c-off" x="960" y="288">ถอนกลับ</text>
   </g>
-  <g class="edge frz" data-k="12" data-born="6" data-lv="6:off" tabindex="0" role="button" aria-label="เส้น 12 ตำรวจอายัดบัญชีของบุ๋มและสามีราว 10 ล้านบาท">
-    <rect class="node frzbox" x="20" y="540" width="200" height="165" rx="4"/>
-    <text class="nt" x="34" y="564">อายัดทรัพย์ (บก.ปอศ.)</text>
+  <g class="edge frz stbox" data-stage="freeze" data-k="12" data-born="6" data-lv="6:off" tabindex="0" role="button" aria-label="เส้น 12 ตำรวจอายัดบัญชีของบุ๋มและสามีราว 10 ล้านบาท">
+    <rect class="node st-box" x="20" y="540" width="200" height="165" rx="4"/>
+    <rect class="st-head" x="21" y="541" width="198" height="31"/>
+    <circle class="st-dot" cx="207" cy="556" r="4"/>
+    <text class="nt st-title" x="34" y="562">อายัดทรัพย์ (บก.ปอศ.)</text>
     <text class="ns" x="34" y="585">บัญชีบุ๋มและสามี 15–17 บัญชี</text>
     <text class="nsx c-off" x="34" y="603">รวมราว 10 ล้าน · อายัดแล้ว</text>
     <text class="ns" x="34" y="621">กำลังตรวจ: บ้านหลายหลัง</text>
@@ -876,9 +905,11 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     <text class="ns" x="264" y="747">ทรัพย์ที่ยึดและอายัดไม่ตกเป็นของแผ่นดิน</text>
     <text class="ns" x="264" y="765">ยื่นคำร้องพร้อมหลักฐานการโอนใน 90 วัน</text>
   </g>
-  <g class="nd" data-born="7">
-    <rect class="node frzbox" x="1090" y="628" width="210" height="150" rx="4"/>
-    <text class="nt c-off" x="1104" y="652">หมายจับ (ศาลอาญา)</text>
+  <g class="nd stbox" data-stage="warrant" data-born="7">
+    <rect class="node st-box" x="1090" y="628" width="210" height="150" rx="4"/>
+    <rect class="st-head" x="1091" y="629" width="208" height="32"/>
+    <circle class="st-dot" cx="1286" cy="645" r="4"/>
+    <text class="nt st-title" x="1104" y="650">หมายจับ (ศาลอาญา)</text>
     <text class="ns" x="1104" y="673">5 พ.ย. 2569 · ผู้ต้องหา 2 คน</text>
     <text class="nsx" x="1104" y="694">บุ๋ม: ฉ้อโกงประชาชน</text>
     <text class="ns" x="1104" y="712">ฟอกเงิน · พ.ร.บ.คอมพิวเตอร์</text>
@@ -915,6 +946,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     <span class="tag t-neu">ไม่มีตัวเลขเปิดเผย</span>
     <span><span class="fl">!</span>จุดที่ข่าวชี้ว่าการอนุมัติจ่ายมีข้อสงสัย</span>
     <span class="fresh-key"><i></i>เพิ่มหรือเปลี่ยนในช่วงเวลาที่เลือก</span>
+    <span class="st-legend"><span class="lk">สถานะคดี (แถบสีทึบ = ล่าสุด ณ ช่วงที่เลือก)</span><span class="st-chip" data-stage="probe">สอบสวน</span><span class="st-chip" data-stage="freeze">อายัดทรัพย์</span><span class="st-chip" data-stage="warrant">ออกหมายจับ</span></span>
   </div>
 
   <div class="updates" id="updates" aria-labelledby="h-upd">
@@ -928,51 +960,51 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     </div>
     <div class="upd-track" id="updTrack" tabindex="0" aria-label="การ์ดอัปเดต เลื่อนซ้ายขวาได้">
     <article class="uc" data-snap="1">
-      <div class="uc-top"><span class="uc-d mono">28.10.2569</span><button class="uc-go" type="button" data-go="1">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">28.10.2569</span><span class="st-chip" data-stage="pre">เริ่มเป็นข่าว</span></span><button class="uc-go" type="button" data-go="1">แสดงในผัง</button></div>
       <h4>มูลนิธิแถลงเรื่อง 2 บัญชี</h4>
       <p>มูลนิธิแถลงว่ารับบริจาคผ่าน 2 บัญชี คือบัญชีชื่อ “องค์กรทำดี โดย น.ส.ปนัดดา” ที่เปิดตั้งแต่ราวปี 2557 ก่อนจดทะเบียน และบัญชีมูลนิธิ โดยอ้างมติกรรมการ 25 ก.ค. 2565 ว่าเงินทั้งหมดเป็นของมูลนิธิ ไม่มีการใช้ส่วนตัว</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 01 · คู่กรณีอ้าง</span><span class="uc-chip">เส้น 10</span></div>
       <div class="src"><a href="https://www.thairath.co.th/entertain/news/2968953" target="_blank" rel="noopener">ไทยรัฐ 28.10</a><a href="https://www.bangkokbiznews.com/news/1258313" target="_blank" rel="noopener">กรุงเทพธุรกิจ 28.10</a></div>
     </article>
     <article class="uc" data-snap="2">
-      <div class="uc-top"><span class="uc-d mono">29–30.10.2569</span><button class="uc-go" type="button" data-go="2">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">29–30.10.2569</span><span class="st-chip" data-stage="probe">ร้องทุกข์ · สอบสวน</span></span><button class="uc-go" type="button" data-go="2">แสดงในผัง</button></div>
       <h4>ผู้รับเหมาเปิดตัวเลข และข้อบังคับถูกเปิดเผย</h4>
       <p>ช่างเอ๋ออกรายการโหนกระแส บอกว่าได้รับเงินกว่า 45 ล้านจากบัญชีที่เชื่อมกับมูลนิธิ และโอนบางส่วนกลับให้ก๊อตตามคำสั่ง บุ๋มชี้แจงว่าเงินที่จ่ายผู้รับเหมาใช้สร้างอาคารมูลนิธิ Thai PBS เปิดรายการโอน 23 ธ.ค. 2568 และข้อมูลบริษัทพูลวิลลาที่ก๊อตถือหุ้นใหญ่ ข้อบังคับข้อ 31 ให้ประธานอนุมัติจ่ายได้ไม่เกิน 5 แสนบาทต่อครั้ง มูลนิธิให้บุ๋มยุติหน้าที่ประธานชั่วคราว และออยศรีร้องทุกข์ต่อ บช.ก.</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 04 · คู่กรณีอ้าง</span><span class="uc-chip">เส้น 05 · คู่กรณีอ้าง</span><span class="uc-chip">เส้น 06</span><span class="uc-chip">เส้น 07 · คู่กรณีอ้าง</span><span class="uc-chip">เส้น 11</span><span class="uc-chip">ด่านอนุมัติจ่าย</span></div>
       <div class="src"><a href="https://thestandard.co/boom-panadda-good-deed-foundation-investigation/" target="_blank" rel="noopener">THE STANDARD 30.10</a><a href="https://www.thaipbs.or.th/news/content/571895" target="_blank" rel="noopener">Thai PBS 30.10</a><a href="https://www.pptvhd36.com/news/%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1/286199" target="_blank" rel="noopener">PPTV 30.10</a><a href="https://www.thairath.co.th/scoop/theissue/2969191" target="_blank" rel="noopener">ไทยรัฐ 29.10</a></div>
     </article>
     <article class="uc" data-snap="3">
-      <div class="uc-top"><span class="uc-d mono">02.11.2569</span><button class="uc-go" type="button" data-go="3">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">02.11.2569</span><span class="st-chip" data-stage="probe">สอบสวน</span></span><button class="uc-go" type="button" data-go="3">แสดงในผัง</button></div>
       <h4>ตำรวจเปิดภาพรวมบัญชี</h4>
       <p>ผบช.ก. ระบุว่าไล่ตรวจบัญชีย้อนถึงปี 2562 พบเงินหมุนเวียนตั้งแต่หลักร้อยล้านถึงเกือบ 1,000 ล้านบาท เป็นตัวเลขเบื้องต้น ไม่ใช่ยอดความเสียหาย สนธิญา สวัสดี ยื่นหนังสือให้ ปปง. สอบเส้นทางเงินและอายัดทรัพย์</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 01 · เปลี่ยนเป็นข้อมูลตำรวจ</span></div>
       <div class="src"><a href="https://www.siamnews.com/news/crime/56516" target="_blank" rel="noopener">สยามนิวส์ 02.11</a><a href="https://thestandard.co/cib-probes-good-deed-foundation-finances/" target="_blank" rel="noopener">THE STANDARD 02.11</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1715706/" target="_blank" rel="noopener">Bangkok Insight 02.11</a></div>
     </article>
     <article class="uc" data-snap="4">
-      <div class="uc-top"><span class="uc-d mono">03.11.2569</span><button class="uc-go" type="button" data-go="4">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">03.11.2569</span><span class="st-chip" data-stage="probe">สอบสวน</span></span><button class="uc-go" type="button" data-go="4">แสดงในผัง</button></div>
       <h4>ปอศ. ชี้เข้าข่ายตัวการร่วม</h4>
       <p>บก.ปอศ. ระบุว่าบุ๋มโอนเงินจากบัญชีตรงไปยังผู้รับเหมา ผู้รับเหมาเป็นทางผ่านก่อนถอนกลับให้คนใกล้ชิด และพบเงินจำนวนมากโอนจากบุ๋มถึงก๊อต ทนายกุ้งที่พาช่างเอ๋ไปให้ปากคำระบุยอดราว 75 ล้าน ส่วนบุ๋มแจ้งความก๊อตและผู้รับเหมาที่กองปราบฯ</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 05 · เปลี่ยนเป็นตำรวจยืนยัน</span><span class="uc-chip">เส้น 07 · เปลี่ยนเป็นตำรวจยืนยัน</span><span class="uc-chip">เส้น 08</span></div>
       <div class="src"><a href="https://thestandard.co/police-evidence-boom-panadda-donation-fraud/" target="_blank" rel="noopener">THE STANDARD 03.11</a><a href="https://www.matichon.co.th/local/news_5959769" target="_blank" rel="noopener">มติชน 03.11</a><a href="https://www.thairath.co.th/news/crime/2970256" target="_blank" rel="noopener">ไทยรัฐ 03.11</a><a href="https://www.dailynews.co.th/news/6327203/" target="_blank" rel="noopener">เดลินิวส์ 03.11</a></div>
     </article>
     <article class="uc" data-snap="5">
-      <div class="uc-top"><span class="uc-d mono">04.11.2569 · กลางวัน</span><button class="uc-go" type="button" data-go="5">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">04.11.2569 · กลางวัน</span><span class="st-chip" data-stage="probe">สอบสวน</span></span><button class="uc-go" type="button" data-go="5">แสดงในผัง</button></div>
       <h4>ยืนยันการใช้เงินส่วนตัว</h4>
       <p>ผบก.ปอศ. ยืนยันว่ามีการนำเงินบริจาคไปใช้ส่วนตัว แต่ยังไม่เปิดยอด ตัวเลข 800 ล้านยังไม่มีใครยืนยัน หนุ่ม กรรชัยเล่าถึงบัญชีที่ 3 และการโอนกลับเข้าบัญชีชื่อบุคคล ตำรวจไล่ตรวจผู้บริจาครายใหญ่ก่อน และกระทรวงมหาดไทยเผยว่ามูลนิธิไม่เคยส่งงบดุลตั้งแต่ปี 2565</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 02</span><span class="uc-chip">เส้น 03 · ยังไม่ยืนยัน</span><span class="uc-chip">เส้น 09</span></div>
       <div class="src"><a href="https://www.thaipbs.or.th/news/content/572146" target="_blank" rel="noopener">Thai PBS 04.11</a><a href="https://www.matichon.co.th/local/news_5960539" target="_blank" rel="noopener">มติชน 04.11</a><a href="https://www.amarintv.com/news/entertain/561950" target="_blank" rel="noopener">อมรินทร์ 04.11</a><a href="https://www.thebangkokinsight.com/news/politics-general/general/1716673/" target="_blank" rel="noopener">Bangkok Insight 04.11</a></div>
     </article>
     <article class="uc" data-snap="6">
-      <div class="uc-top"><span class="uc-d mono">04.11.2569 · เย็น</span><button class="uc-go" type="button" data-go="6">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">04.11.2569 · เย็น</span><span class="st-chip" data-stage="freeze">อายัดทรัพย์</span></span><button class="uc-go" type="button" data-go="6">แสดงในผัง</button></div>
       <h4>ปอศ. ยืนยันอายัดบัญชี · ยังไม่ออกหมาย</h4>
       <p>ผบก.ปอศ. ยืนยันว่าอายัดบัญชีธนาคารของบุ๋มและสามีแล้ว 15–17 บัญชี รวมราว 10 ล้านบาท และกำลังตรวจบ้าน ที่ดิน และรถ 22 คัน ตัวเลข “กว่า 100 ล้าน” ที่หลายสำนักรายงานช่วงเย็นไม่มีผู้ให้ข้อมูลที่ระบุชื่อ ผบช.ก. ขอเวลา 1–2 วันก่อนชัดเจนเรื่องหมาย ส่วนหมายเรียกของ สภ.บ้านนา เป็นคดีรุกที่ดินราชพัสดุ แยกจากคดีมูลนิธิ</p>
       <div class="uc-adds"><span class="uc-k">ในผัง</span><span class="uc-chip">เส้น 12 · อายัดทรัพย์</span></div>
       <div class="src"><a href="https://mgronline.com/crime/detail/9690000105887" target="_blank" rel="noopener">ผู้จัดการ 04.11 17:19</a><a href="https://www.siamnews.com/news/social/56685" target="_blank" rel="noopener">สยามนิวส์ 04.11 16:43</a><a href="https://www.thaipost.net/criminality-news/1101655/" target="_blank" rel="noopener">ไทยโพสต์ 04.11</a><a href="https://www.amarintv.com/news/social/561605" target="_blank" rel="noopener">อมรินทร์ 30.10</a></div>
     </article>
     <article class="uc wide" data-snap="7" id="update-latest">
-      <div class="uc-top"><span class="uc-d mono">05.11.2569</span><button class="uc-go" type="button" data-go="7">แสดงในผัง</button></div>
+      <div class="uc-top"><span class="uc-dd"><span class="uc-d mono">05.11.2569</span><span class="st-chip now" data-stage="warrant">ออกหมายจับ</span></span><button class="uc-go" type="button" data-go="7">แสดงในผัง</button></div>
       <h4>ศาลออกหมายจับบุ๋มและก๊อต</h4>
-      <p class="uc-lede">ล่าสุด ณ 05.11.2569 · 18:00 น.</p>
+      <p class="uc-lede">ล่าสุด ณ 05.11.2569 · 17:30 น.</p>
       <div class="uc-items">
         <div class="it">
           <span class="tag t-off">ศาลอาญา · รายงานตรงกันหลายสำนัก</span>
@@ -1260,7 +1292,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <!-- 07 -->
 <section class="chap wrap" id="timeline" aria-labelledby="h-tl">
   <div class="chap-h">
-    <div class="no"><b>07</b> / ไทม์ไลน์</div>
+    <div class="no"><b>07</b> / ลำดับเหตุการณ์</div>
     <div><h2 id="h-tl">จากบัญชีแรก ถึงสัปดาห์นี้</h2></div>
   </div>
   <ol class="tl">
@@ -1358,7 +1390,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
       <li><a href="https://www.siamnews.com/news/social/56685" target="_blank" rel="noopener">สยามนิวส์ · มีรายงานอายัดทรัพย์บุ๋ม สามี ลูก พ่อแม่ (4 พ.ย. 16:43)</a></li>
       <li><a href="https://mgronline.com/onlinesection/detail/9690000105867" target="_blank" rel="noopener">ผู้จัดการออนไลน์ · สะพัด อายัดทรัพย์กว่า 100 ล้าน (4 พ.ย. 16:55)</a></li>
     </ol>
-    <h3>เพิ่มในอัปเดต 5 พ.ย. 18:00</h3>
+    <h3>เพิ่มในอัปเดต 5 พ.ย. 17:30</h3>
     <ol start="46">
       <li><a href="https://today.line.me/th/v3/article/pepkDj7" target="_blank" rel="noopener">THE STANDARD (ผ่าน LINE TODAY) · เปิดเส้นทางเงิน 3 ข้อหา และ ปปง. เฉลี่ยคืนผู้บริจาค (5 พ.ย.)</a></li>
       <li><a href="https://www.khaosod.co.th/breaking-news/news_10461936" target="_blank" rel="noopener">ข่าวสด · ศาลอาญาอนุมัติหมายจับบุ๋มและก๊อต (5 พ.ย.)</a></li>
@@ -1375,16 +1407,17 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 <footer class="wrap">
   <p class="quote rv">“ตรวจสอบได้ทุกบาท ทุกสตางค์”</p>
   <p class="quote-by">คำยืนยันของบุ๋ม ปนัดดา ต่อสื่อ เรื่องบัญชีมูลนิธิ · <a href="https://www.thairath.co.th/scoop/theissue/2969191" target="_blank" rel="noopener" style="color:var(--ink2)">ไทยรัฐ 29 ต.ค. 2569</a></p>
-  <p class="sent">กลับไปดู <a href="#flow-sec">ผังเส้นเงิน</a> หรือ <a href="#exhibits">หลักฐานทีละเส้น</a> หรือ <a href="#sources">แหล่งข่าว</a></p>
+  <p class="sent">กลับไปดู <a href="#flow-sec">ไทม์ไลน์เส้นเงิน</a> หรือ <a href="#exhibits">หลักฐานทีละเส้น</a> หรือ <a href="#sources">แหล่งข่าว</a></p>
   <div class="fine">
     <div><b>ข้อจำกัด</b>รวบรวมจากรายงานข่าวออนไลน์ภาษาไทย ไม่ได้เห็นรายการเดินบัญชี มติกรรมการ หรือสำนวนคดี ศาลออกหมายจับ 2 คนเมื่อ 5 พ.ย. แต่หมายจับไม่ใช่คำพิพากษา ทุกคนที่ถูกพาดพิงยังได้รับการสันนิษฐานว่าบริสุทธิ์</div>
-    <div><b>ข้อมูล ณ</b>วันที่ 5 พฤศจิกายน 2569 เวลา 18:00 น. สถานการณ์เปลี่ยนเร็ว ควรเช็กข่าวล่าสุดก่อนนำไปใช้ต่อ</div>
+    <div><b>ข้อมูล ณ</b>วันที่ 5 พฤศจิกายน 2569 เวลา 17:30 น. สถานการณ์เปลี่ยนเร็ว ควรเช็กข่าวล่าสุดก่อนนำไปใช้ต่อ</div>
     <div><b>ซอร์สโค้ด</b><a href="https://github.com/kawin-work/follow-the-money" target="_blank" rel="noopener">github.com/kawin-work/follow-the-money</a> · ฟอนต์ Noto Serif Thai, IBM Plex Sans Thai, JetBrains Mono (SIL OFL)</div>
   </div>
   <div class="log">
     <b>บันทึกการแก้ไข</b>
     <ul>
-      <li><span class="mono">05.11.2569 · 18:00</span> เพิ่ม milestone ศาลออกหมายจับบุ๋มและก๊อต (5 พ.ย.) ในไทม์ไลน์ แถบเวลา และการ์ดอัปเดต เพิ่มเส้น 13 ทรัพย์ที่อายัดจะเฉลี่ยคืนผู้บริจาค (ปปง. ตามรายงาน THE STANDARD) เพิ่มกล่องหมายจับและข้อหาในผัง บัญชีกสิกรไทยและการไม่พบใบอนุญาตเรี่ยไร (กรมการปกครอง) ตัวเลข 300/200 ล้านที่ยังไม่ยืนยัน และเวลาออกหมายที่ข่าวรายงานไม่ตรงกัน เพิ่มแหล่งข่าว 8 ชิ้น</li>
+      <li><span class="mono">05.11.2569 · 17:51</span> เปลี่ยนชื่อส่วน 02 เป็น “ไทม์ไลน์เส้นเงิน” และส่วน 07 เป็น “ลำดับเหตุการณ์” เพิ่มสีสถานะคดีที่เปลี่ยนตามช่วงเวลา (สอบสวน → อายัดทรัพย์ → ออกหมายจับ) กล่องสถานะล่าสุดมีแถบสีทึบ และแก้เวลา “ข้อมูล ณ” ของอัปเดตก่อนหน้าจาก 18:00 เป็น 17:30 น. ให้ตรงกับเวลาที่รวบรวมข่าวจริง (ไม่มีข้อมูลข่าวใหม่ในรอบนี้)</li>
+      <li><span class="mono">05.11.2569 · 17:30</span> เพิ่ม milestone ศาลออกหมายจับบุ๋มและก๊อต (5 พ.ย.) ในไทม์ไลน์ แถบเวลา และการ์ดอัปเดต เพิ่มเส้น 13 ทรัพย์ที่อายัดจะเฉลี่ยคืนผู้บริจาค (ปปง. ตามรายงาน THE STANDARD) เพิ่มกล่องหมายจับและข้อหาในผัง บัญชีกสิกรไทยและการไม่พบใบอนุญาตเรี่ยไร (กรมการปกครอง) ตัวเลข 300/200 ล้านที่ยังไม่ยืนยัน และเวลาออกหมายที่ข่าวรายงานไม่ตรงกัน เพิ่มแหล่งข่าว 8 ชิ้น</li>
       <li><span class="mono">04.11.2569 · 17:45</span> ย้ายอัปเดตล่าสุดไปไว้ใต้ผังเส้นเงินและทำเป็นการ์ดเลื่อนดูตามลำดับเวลา เพิ่มแถบเวลาในผังให้เห็นว่าแต่ละเส้นปรากฏเมื่อไรและเปลี่ยนระดับเมื่อไร เพิ่มเส้น 12 อายัดทรัพย์ แก้ข้อมูลอายัดตามที่ ผบก.ปอศ. ยืนยัน (15–17 บัญชี ราว 10 ล้าน) และแยกตัวเลข “กว่า 100 ล้าน” ที่ยังไม่ยืนยันออกมา เพิ่มแหล่งข่าว 3 ชิ้น</li>
       <li><span class="mono">04.11.2569 · 17:30</span> เพิ่มสถานะเรื่องหมาย ข่าวอายัดทรัพย์ที่ยังรอยืนยัน และหมายเรียกของ สภ.บ้านนา เพิ่มแหล่งข่าว 10 ชิ้น แก้จำนวนสำนักข่าวที่หัวเว็บ ซึ่งเดิมเขียน 16 แต่ที่ถูกคือ 14 (หลังอัปเดตเป็น 18)</li>
       <li><span class="mono">04.11.2569</span> เผยแพร่ครั้งแรก</li>
@@ -1458,9 +1491,10 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
   }
 
   /* ---------- flow diagram ---------- */
-  var SNAPS=[{d:"28.10.2569",t:"มูลนิธิแถลงเรื่อง 2 บัญชี"},{d:"29–30.10.2569",t:"ผู้รับเหมาเปิดตัวเลข และข้อบังคับถูกเปิดเผย"},{d:"02.11.2569",t:"ตำรวจเปิดภาพรวมบัญชี"},{d:"03.11.2569",t:"ปอศ. ชี้เข้าข่ายตัวการร่วม"},{d:"04.11.2569 · กลางวัน",t:"ยืนยันการใช้เงินส่วนตัว"},{d:"04.11.2569 · เย็น",t:"ปอศ. ยืนยันอายัดบัญชี · ยังไม่ออกหมาย"},{d:"05.11.2569",t:"ศาลออกหมายจับบุ๋มและก๊อต"}];
+  var SNAPS=[{d:"28.10.2569",t:"มูลนิธิแถลงเรื่อง 2 บัญชี",s:"pre",sl:"เริ่มเป็นข่าว"},{d:"29–30.10.2569",t:"ผู้รับเหมาเปิดตัวเลข และข้อบังคับถูกเปิดเผย",s:"probe",sl:"ร้องทุกข์ · สอบสวน"},{d:"02.11.2569",t:"ตำรวจเปิดภาพรวมบัญชี",s:"probe",sl:"สอบสวน"},{d:"03.11.2569",t:"ปอศ. ชี้เข้าข่ายตัวการร่วม",s:"probe",sl:"สอบสวน"},{d:"04.11.2569 · กลางวัน",t:"ยืนยันการใช้เงินส่วนตัว",s:"probe",sl:"สอบสวน"},{d:"04.11.2569 · เย็น",t:"ปอศ. ยืนยันอายัดบัญชี · ยังไม่ออกหมาย",s:"freeze",sl:"อายัดทรัพย์"},{d:"05.11.2569",t:"ศาลออกหมายจับบุ๋มและก๊อต",s:"warrant",sl:"ออกหมายจับ"}];
   var LAST=SNAPS.length;
   var svg=document.getElementById('flow');
+  var stboxes=[].slice.call(svg.querySelectorAll('.stbox')), board=document.getElementById('board');
   if(reduce && svg.pauseAnimations) svg.pauseAnimations();
   var edges=[].slice.call(svg.querySelectorAll('.edge'));
   var born=[].slice.call(svg.querySelectorAll('[data-born]'));
@@ -1515,6 +1549,9 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
 
   function applySnap(n){
     snap=n;
+    var stg=SNAPS[n-1].s;
+    stboxes.forEach(function(g){ g.classList.toggle('st-now', g.getAttribute('data-stage')===stg && +g.getAttribute('data-born')<=n); });
+    if(board) board.setAttribute('data-stage', stg);
     born.forEach(function(el){
       var b=+el.getAttribute('data-born');
       el.classList.toggle('ghost', b>n);
@@ -1592,6 +1629,7 @@ footer{margin-top:clamp(90px,12vw,170px);border-top:1px solid var(--line2);paddi
     range.value=n;
     range.setAttribute('aria-valuetext', SNAPS[n-1].d+' '+SNAPS[n-1].t);
     tbDate.textContent=SNAPS[n-1].d; tbTitle.textContent=SNAPS[n-1].t;
+    var tbSt=document.getElementById('tbSt'); if(tbSt){ tbSt.setAttribute('data-stage',SNAPS[n-1].s); document.getElementById('tbStL').textContent=SNAPS[n-1].sl; }
     ticks.forEach(function(t){ t.classList.toggle('on', +t.getAttribute('data-go')===n); });
     cards.forEach(function(c){ var on=+c.getAttribute('data-snap')===n; c.classList.toggle('on',on); c.setAttribute('aria-current', on?'true':'false'); });
     if(opt.from!=='track') centerCard(n,opt.behavior);
